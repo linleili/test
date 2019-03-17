@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更多景区</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="js/zepto.min.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <link rel="stylesheet" href="css/more.css">
+    <script src="/js/vue.js"></script>
+    <script src="/js/vue-router.js"></script>
+    <script src="/js/vue-resource.js"></script>
+    <script src="/js/zepto.plugin.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="center">
+    <div class="main">
+        <a href="turist"><div class="main-left"><img src="uploads/shot.png" alt=""></div></a>
+        <div class="main-right">
+            <p>北海银滩</p>
+        </div>
+    </div>
+    <div v-for="item in myData2" class="center-center">
+        <img :src="item.img" alt="">
+        <!--<img src="uploads/snow.jpg" alt="">-->
+        <span>热门</span>
+        <p>北海银滩-天下第一滩</p>
+    </div>
+
+    <div class="center-list">
+        <div class="center-list-top"><p>景区天气详情</p></div>
+        <div class="center-list-center">
+            <div class="list-center-left"><p>星期日&emsp;08/04</p></div>
+            <div class="list-center-right"><img src="uploads/white.jpg" alt="">
+            <p>27°</p>
+                <p class="p1">32°</p>
+            </div>
+        </div>
+        <div class="center-list-center">
+            <div class="list-center-left"><p>星期日&emsp;08/04</p></div>
+            <div class="list-center-right"><img src="uploads/sun.jpg" alt="">
+                <p>27°</p>
+                <p class="p1">32°</p>
+            </div>
+        </div>
+        <div class="center-list-center">
+            <div class="list-center-left"><p>星期日&emsp;08/04</p></div>
+            <div class="list-center-right"><img src="uploads/white.jpg" alt="">
+                <p>27°</p>
+                <p class="p1">32°</p>
+            </div>
+        </div>
+        <div class="center-list-center">
+            <div class="list-center-left"><p>星期日&emsp;08/04</p></div>
+            <div class="list-center-right"><img src="uploads/sun.jpg" alt="">
+                <p>27°</p>
+                <p class="p1">32°</p>
+            </div>
+        </div>
+        <div class="center-list-center">
+            <div class="list-center-left"><p>星期日&emsp;08/04</p></div>
+            <div class="list-center-right"><img src="uploads/white.jpg" alt="">
+                <p>27°</p>
+                <p class="p1">32°</p>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="center-list1">
+        <div class="center-list1-top">
+            <div v-for="item in myData" class="list1-top-list">
+                <img :src="item.img" alt="">
+                <p>{{item.title}}</p>
+                <!--<p>{{item.title}}</p>-->
+            </div>
+            <!--<div class="list1-top-list">-->
+                <!--<img src="uploads/uv.jpg" alt="">-->
+                <!--<p>紫外线强</p>-->
+            <!--</div>-->
+            <!--<div class="list1-top-list">-->
+                <!--<img src="uploads/uv.jpg" alt="">-->
+                <!--<p>紫外线强</p>-->
+            <!--</div>-->
+        </div>
+        <div class="center-list1-bottom">
+            <div class="list1-top-list">
+                <img src="uploads/yezi.jpg" alt="">
+                <p>紫外线强</p>
+            </div>
+            <div class="list1-top-list">
+                <img src="uploads/yezi.jpg" alt="">
+                <p>紫外线强</p>
+            </div>
+            <div class="list1-top-list">
+                <img src="uploads/yezi.jpg" alt="">
+                <p>紫外线强</p>
+            </div>
+            <div class="list1-top-list">
+                <img src="uploads/yezi.jpg" alt="">
+                <p>紫外线强</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="center-bottom">
+        <div class="center-list-top"><p>景区讲简介</p>
+
+        <div v-for="item in myData1" class="center-list-center1"><p>{{item.title}}</p></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+    new Vue({
+        el: '.center',
+        data:{
+
+            curindex:'nothing',
+
+            myData:[],/*存放内容*/
+            myData1:[],
+            myData2:[],
+
+
+
+        },
+
+
+        created:function(){/*渲染的段落数据*/
+            var that = this;
+            this.$http.get('/getlist4-main').then(function (res,err) {
+                that.myData=res.body.list
+                console.log(that.myData)
+                console.log(res.body)
+            })
+
+
+            this.$http.get('/getlist4').then(function (res,err) {
+                that.myData1=res.body.list
+                console.log(that.myData1)
+                console.log(res.body.list)
+            })
+
+            this.$http.get('/getlist4-img').then(function (res,err) {
+                that.myData2=res.body.list
+                console.log(that.myData2)
+                console.log(res.body)
+            })
+        },
+
+
+        // created:function(){/*渲染的段落数据*/
+        //     var that = this;
+        //     this.$http.get('/getlist3-main').then(function (res,err) {
+        //         that.myData=res.body.data
+        //         console.log(that.myData)
+        //     })
+        //     console.log(myData)
+        // },
+
+
+
+
+
+
+    })
+</script>
+</body>
+</html>

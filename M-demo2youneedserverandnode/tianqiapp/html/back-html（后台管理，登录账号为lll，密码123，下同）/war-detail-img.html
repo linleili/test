@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片删除</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/admin-index.css">
+</head>
+
+<body>
+<div class="top2">
+    <p class="ggbot">图片修改</p>
+</div>
+
+</br>
+<a class="j-del"><button type="button" class="btn btn-warning">删除</button></a>
+    <form class="j-form-img"></form>
+
+    <script id="tem-main" type="text/x-handlebars-template">
+        <input type="hidden" name="id" value="{{_id}}">
+        <!--标题：<input type="text" value="{{title}}" name="title" />-->
+
+        当前图片：<br>
+        <img src="{{img}}" alt="">
+        <input type="file" name="img" class="j-upload" />
+        <button type="submit" class="j-btn">修改</button>
+    </script>
+
+    <script src="/js/handlebars.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+
+        //取得路径上的id。找到当前的id
+        var getParamsSting = function(){
+            var matchstring = location.href.match(/detail-img\/(.*)$/);
+            return !!matchstring ? matchstring[1] : null
+        }
+
+        var _id = getParamsSting();
+
+        function changeview(res){/*渲染模板*/
+            var myTemplate = Handlebars.compile($('#tem-main').html());
+            var html = myTemplate(res)
+            $('.j-form-img').html(html)
+        }
+
+        $.get('/getlistItem4-img/' + _id, function(res){/*获取当前页面的信息，使用的是刚刚取得的id*/
+            if (res.code == 0){
+                changeview(res.info)/*渲染模板*/
+            }
+        })
+
+        $('.j-form-img').on('submit', function(){
+            var myphoto = $('.j-upload')[0].files[0],
+                formdata = new FormData();
+
+            $('input', this).each(function(){
+                formdata.append($(this).attr('name'), $(this).val())
+            })
+
+            formdata.append($('.j-upload').attr('name'), myphoto)
+
+            $.ajax({
+                type: 'POST',
+                url: '/update4-img/'+ _id,/*提交的时候把id提交上去*/
+                cache: false,
+                processData: false,
+                contentType:false,
+                data: formdata,
+                dataType:'json'
+            }).done(function(res){
+                if (res.code == 0) {
+                    location.href = '/war-index'
+                }
+            })
+
+            //阻止默认的提交事件
+            return false;
+        })
+
+        $('.j-del').click(function(){
+            $.get('/del4-img/' + _id, function(res){
+                if (res.code == 0){
+                    location.href = '/war-index'
+                }
+            })
+        })
+
+        $('.j-btn').click(function(){
+            $.post('/update4-img/:id' + _id, function(res){
+                if (res.code == 0){
+                    location.href = '/war-index'
+                }
+            })
+        })
+
+
+        if ( !$.cookie('token1') ){
+            location.href = '/login';
+        }
+    </script>
+</body>
+</html>

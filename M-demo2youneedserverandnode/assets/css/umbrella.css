@@ -1,0 +1,283 @@
+.main{
+    width: 100%;
+    height: 120px;
+    background-image: linear-gradient(to right,rgb(0,164,182),rgb(0,205,184));
+    position: relative;
+
+}
+.img2333{
+    position: absolute;
+    top: -1rem;
+    right: 2rem;
+    height: 10rem;
+    width: 10rem;
+}
+.center{
+    width: 100%;
+    height: 1741px;
+}
+.main-left{
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    float: left;
+    top: 3px;
+    left: 20px;
+}
+.main-left img{
+    width: 6rem;
+    height: 100%;
+}
+.main-right{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    float: right;
+    margin-top: 10px;
+}
+.center-center-img{
+    margin: auto;
+    width: 26.5rem;
+    height: 100%;
+
+}
+.main-right p{
+    color: white;
+    font-size: 6rem;
+    font-family: 微软雅黑;
+}
+
+.picture{
+    width: 90%;
+    /*box-shadow:5px 5px  17px 1px #c8c8c8;*/
+    height: 60rem;
+    background-color: gray;
+    margin: auto;
+    position: relative;
+    margin-top: 3rem;
+}
+.picture img{
+    width: 100%;
+    height: 100%;
+}
+
+/*.picture p{*/
+/*color: white;*/
+/*font-size: 5rem;*/
+/*font-family: 微软雅黑;*/
+
+/*}*/
+.picture-div p{
+    color: white;
+    font-size: 4rem;
+    font-family: 微软雅黑;
+}
+.p1{
+    position: absolute;
+    top: 32%;
+    left: 7rem;
+    color: white;
+    font-size: 5rem;
+    font-family: 微软雅黑;
+    /*font-size: 5rem;*/
+}
+.picture-div{
+    /*padding-bottom: 1rem;*/
+    width: 38rem;
+    height: 22rem;
+    /*background-color: blue;*/
+    border-left: 1rem yellow solid;
+    padding-left: 1rem;
+    position: absolute;
+    top: 43%;
+    left: 4rem;
+}
+.picture-div-top{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    /*background-color: black;*/
+}
+.picture-div-top img{
+    width: 16%;
+}
+.picture-bottom{
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    bottom: 3rem;
+    font-size: 4rem;
+    color: white;
+    font-family: 微软雅黑;
+    text-align: center;
+}
+.center-center11{
+    width: 90%;
+    height: 5rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: 微软雅黑;
+    font-size: 5rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    margin-top: 4rem;
+    margin-bottom: 15rem;
+}
+
+.baike{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    height: 5rem;
+    /*background-color: blue;*/
+
+}
+.baike-left{
+    float: left;
+    width: 23rem;
+    height: 1px;
+    background-color: rgb(48, 212, 244);
+}
+.baike-center{
+    width: 27rem;
+    height: 10rem;
+    font-family: 微软雅黑;
+    border-top-left-radius: 55px;
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    border-bottom-right-radius: 55px;
+    margin-top: -5rem;
+    color: white;
+    font-size: 5rem;
+    background-color: rgb(48, 212, 244);
+}
+.baike-center p{
+    padding-top: 2rem;
+    padding-left: 3rem;
+}
+.baike-right{
+    float: right;
+    width: 23rem;
+    height: 1px;
+    background-color: rgb(48, 212, 244);
+}
+.baiketext{
+    width: 80%;
+    height: 15rem;
+    /*background-color: blue;*/
+    margin: auto;
+    margin-top: 5rem;
+}
+.baiketext p{
+    font-size: 5rem;
+    font-family: 微软雅黑;
+}
+
+
+
+.center-top-right{
+    width: 12%;
+    height: 100%;
+}
+
+
+
+
+.center-list-center{
+    width: 100%;
+    height: 5%;
+    position: relative;
+    display: flex;
+    float: left;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+}
+.center-list-center ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-left: -50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transform: translate(2%, 1%);
+    list-style: none;
+}
+.center-list-center ul li{
+    list-style-type: none;
+    position: relative;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #000000;
+    line-height: 1;
+    transition: 0.2s all linear;
+    cursor: pointer;
+    width: 15%;
+    height: 100%;
+    font-family: 微软雅黑;
+    font-size: 5rem;
+    text-align: center;
+}
+.center-list-center-list{
+    width: 96%;
+    height: 100%;
+    font-family: 微软雅黑;
+    font-size: 5rem;
+    text-align: center;
+}
+
+li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    border-bottom: 5px solid rgb(0, 162, 255);
+    transition: 0.2s all linear;
+}
+
+li:active {
+    /*background: #000;*/
+    color: #fff;
+}
+
+.active ~ li::before {
+    left: 0;
+}
+.active::before {
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.hover::before{
+    width: 200%;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1025px) {
+    .picture{height: 90rem}
+
+}

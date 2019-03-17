@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="js/zepto.min.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <script src="/js/zepto.plugin.js"></script>
+    <script src="/js/vue.min.js"></script>
+    <script src="/js/vue.js"></script>
+    <script src="/js/vue-router.js"></script>
+    <script src="/js/vue-resource.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+
+
+</head>
+<body>
+<div class="center">
+    <div class="center-top">
+        <div class="center-top-left">
+            <img src="uploads/add.png" alt="">
+        </div>
+        <div class="center-top-center">
+            <img src="uploads/position.png" alt="">
+            <p>北海市-海城区</p>
+        </div>
+        <div class="center-top-right btn11">
+           <img src="uploads/fly.png" alt="">
+        </div>
+    </div>
+
+    <div class="c">
+        <div v-for="item in myData1" class="c-left">
+            <p>{{item.title}}</p>
+            <img src="uploads/du.png" alt="" class="img11">
+            <p class="p1">晴</p>
+            <img src="uploads/sun.png" alt="" class="img22">
+            <div class="PEM"><p>空气&emsp;优</p></div>
+        </div>
+
+    </div>
+
+    <div class="center-main-top">
+        <div class="center-main-top11">
+            <div class="center-main-top11-left">
+                <div class="center-main-top11-left-left"><p>星期六</p></div>
+                <div class="center-main-top11-left-left"><p>今天</p></div>
+            </div>
+            <div class="center-main-top11-right">
+                <p>27°</p>
+                <p class="p22">32°</p>
+            </div>
+
+        </div>
+
+        <div class="center-main-top22">
+            <div class="cnter-main-bottom"><p>现在</p>
+                <img src="/uploads/yin.gif" alt="">
+                <p>阴</p>
+                <p>28°</p>
+            </div>
+            <div class="cnter-main-bottom"><p>17时</p>
+                <img src="/uploads/yin.gif" alt="">
+                <p>阴</p>
+                <p>24°</p>
+            </div>
+            <div class="cnter-main-bottom"><p>18时</p>
+                <img src="/uploads/yin.gif" alt="">
+                <p>阴</p>
+                <p>23°</p>
+            </div>
+            <div class="cnter-main-bottom"><p>19时</p>
+                <img src="/uploads/yin.gif" alt="">
+                <p>阴</p>
+                <p>25°</p>
+            </div>
+            <div class="cnter-main-bottom"><p>20时</p>
+                <img src="/uploads/yin.gif" alt="">
+                <p>阴</p>
+                <p>27°</p>
+            </div>
+            <div class="cnter-main-bottom"><p>21时</p>
+                <img src="/uploads/yin.gif" alt="">
+                <p>阴</p>
+                <p>25°</p>
+            </div>
+        </div>
+    </div>
+    <div class="center-main-center">
+        <div class="center-main-top11">
+            <div class="center-main-top11-left">
+                <div class="center-main-top11-left-left111"><p>天气预报</p></div>
+
+            </div>
+            <div class="center-main-top11-right">
+                <img src="uploads/power.png" alt="">
+            </div>
+
+        </div>
+        <div class="center-list">
+            <div class="center-list-center">
+                <div class="list-center-left"><p>星期日&emsp;08/04</p></div>
+                <div class="list-center-right">
+                    <img style="-webkit-user-select: none;" src="/uploads/qing.gif">
+                    <!--<img src="uploads/sun.png" alt="">-->
+                    <p>19°</p>
+                    <p class="p12">23°</p>
+                </div>
+            </div>
+            <div class="center-list-center">
+                <div class="list-center-left"><p>星期一&emsp;08/05</p></div>
+                <div class="list-center-right">
+                    <img style="-webkit-user-select: none;" src="/uploads/yin.gif">
+                    <!--<img src="uploads/sun.png" alt="">-->
+                    <p>25°</p>
+                    <p class="p12">27°</p>
+                </div>
+            </div>
+            <div class="center-list-center">
+                <div class="list-center-left"><p>星期二&emsp;08/06</p></div>
+                <div class="list-center-right">
+                    <img style="-webkit-user-select: none;" src="/uploads/yu.gif">
+                    <!--<img src="uploads/sun.png" alt="">-->
+                    <p>25°</p>
+                    <p class="p12">31°</p>
+                </div>
+            </div>
+            <div class="center-list-center">
+                <div class="list-center-left"><p>星期三&emsp;08/07</p></div>
+                <div class="list-center-right">
+                    <img style="-webkit-user-select: none;" src="/uploads/xue.gif">
+                    <!--<img src="uploads/sun.png" alt="">-->
+                    <p>27°</p>
+                    <p class="p12">30°</p>
+                </div>
+            </div>
+            <div class="center-list-center">
+                <div class="list-center-left"><p>星期四&emsp;08/08</p></div>
+                <div class="list-center-right">
+                    <img style="-webkit-user-select: none;" src="/uploads/zhenyu.gif">
+                    <!--<img src="uploads/sun.png" alt="">-->
+                    <p>21°</p>
+                    <p class="p12">29°</p>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="center-main-center">
+        <div class="center-main-top11">
+            <div class="center-main-top11-left">
+                <div class="center-main-top11-left-left111"><p>空气质量</p></div>
+
+            </div>
+            <div class="center-main-top11-right">
+                <img src="uploads/power.png" alt="">
+            </div>
+
+        </div>
+        <div class="center-list">
+            <!--<svg width="100%" height="100%" version="1.1"> -->
+                <!--    <circle cx="50%" cy="50%" r="100" stroke="#DCDCDC" stroke-width="18" fill="none"/> -->
+                <!--    <text id="conText" x="160" y="200" fill="red" style="font-size: 5rem"></text> -->
+                <!--    <path id="ring" fill="none" stroke="red" stroke-width="15"/>-->
+         <!--<ul class="progress">       &lt;!&ndash;    </svg>&ndash;&gt;-->
+             <!--<li data-name="PM2.5指数" data-percent="45%">-->
+                 <!--<svg viewBox="-10 -10 220 220">-->
+                     <!--<g fill="none" stroke-width="6" transform="translate(100,100)">-->
+                         <!--<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>-->
+                         <!--<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>-->
+                         <!--<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>-->
+                         <!--<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>-->
+                         <!--<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>-->
+                         <!--<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>-->
+                     <!--</g>-->
+                 <!--</svg>-->
+                 <!--<svg viewBox="-10 -10 220 220">-->
+                     <!--<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="200"></path>-->
+                 <!--</svg>-->
+             <!--</li></ul>-->
+            <!--<svg width="0" height="0">-->
+                <!--<defs>-->
+                    <!--<linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">-->
+                        <!--<stop stop-color="#618099"/>-->
+                        <!--<stop offset="100%" stop-color="#8e6677"/>-->
+                    <!--</linearGradient>-->
+                    <!--<linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">-->
+                        <!--<stop stop-color="#8e6677"/>-->
+                        <!--<stop offset="100%" stop-color="#9b5e67"/>-->
+                    <!--</linearGradient>-->
+                    <!--<linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">-->
+                        <!--<stop stop-color="#9b5e67"/>-->
+                        <!--<stop offset="100%" stop-color="#9c787a"/>-->
+                    <!--</linearGradient>-->
+                    <!--<linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">-->
+                        <!--<stop stop-color="#9c787a"/>-->
+                        <!--<stop offset="100%" stop-color="#817a94"/>-->
+                    <!--</linearGradient>-->
+                    <!--<linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">-->
+                        <!--<stop stop-color="#817a94"/>-->
+                        <!--<stop offset="100%" stop-color="#498a98"/>-->
+                    <!--</linearGradient>-->
+                    <!--<linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">-->
+                        <!--<stop stop-color="#498a98"/>-->
+                        <!--<stop offset="100%" stop-color="#618099"/>-->
+                    <!--</linearGradient>-->
+                <!--</defs>-->
+            <!--</svg>-->
+            <div class="donut">
+                <svg id="myRectangle" width="240" height="240" xmlns="http://www.w3.org/2000/svg" class="donut__svg">
+                    <circle id="donut-graph-x" class="donut__svg__scrim" r="90" cy="120" cx="120" stroke-width="15" stroke="#333" fill="none" />
+                    <circle id="donut-graph" class="donut__svg__circle--one" r="90" cy="120" cx="120" stroke-width="15" stroke="url(#purple)" stroke-linejoin="round" stroke-linecap="round" fill="none" />
+
+                    <defs>
+                        <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#7a5bcf" />
+                            <stop offset="100%" stop-color="#8A6FD5" />
+                        </linearGradient>
+                    </defs>
+
+                </svg>
+                <div class="donut__copy">
+        <span class="donut__title">
+      <span class="js-donut-figure"></span>
+        <span class="donut__spic">%</span>
+        </span>
+                </div>
+            </div>
+            <div class="center-list-p">
+            <p class="p1212">PM2.5指数</p></div>
+        </div>
+    </div>
+
+
+
+
+    <div class="center-main-center112">
+        <div class="center-main-top11">
+            <div class="center-main-top11-left">
+                <div class="center-main-top11-left-left111"><p>太阳和月亮</p></div>
+
+            </div>
+            <div class="center-main-top11-right">
+                <img src="uploads/power.png" alt="">
+            </div>
+
+        </div>
+        <div class="center-list">
+            <div class="center-list-bottom-left">
+
+
+                <div class="center-list-bottom-left-top"><img src="uploads/sun22.png" alt=""></div>
+                <div class="center-list111">
+                    <div class="center-list222">
+                        <p>日出05:15</p>
+                    </div>
+                    <div class="center-list222">
+                        <p>日落18:15</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="center-main-center1122">
+        <div class="center-main-top11">
+            <div class="center-main-top11-left">
+                <div class="center-main-top11-left-left111"><p>生活指数</p></div>
+
+            </div>
+            <div class="center-main-top11-right">
+                <img src="uploads/power.png" alt="">
+            </div>
+
+        </div>
+        <div class="center-list1211">
+            <a href="cloth">  <div class="center-list121">
+                <div class="center-list121-top">
+                    <img src="uploads/mylogo.png" alt="">
+                </div>
+                <div class="center-list121-bottom">
+                    <p>不宜</p>
+                </div>
+            </div></a>
+            <a href="cloth">  <div class="center-list121">
+                <div class="center-list121-top">
+                    <img src="uploads/mylogo.png" alt="">
+                </div>
+                <div class="center-list121-bottom">
+                    <p>不宜</p>
+                </div>
+            </div></a>
+            <a href="cloth">  <div class="center-list121">
+                <div class="center-list121-top">
+                    <img src="uploads/mylogo.png" alt="">
+                </div>
+                <div class="center-list121-bottom">
+                    <p>不宜</p>
+                </div>
+            </div></a>
+            <a href="cloth">  <div class="center-list121">
+                <div class="center-list121-top">
+                    <img src="uploads/mylogo.png" alt="">
+                </div>
+                <div class="center-list121-bottom">
+                    <p>不宜</p>
+                </div>
+            </div></a>
+            <a href="umbrella">  <div class="center-list121">
+                <div class="center-list121-top">
+                    <img src="uploads/umbrella.png" alt="">
+                </div>
+                <div class="center-list121-bottom">
+                    <p>无需</p>
+                </div>
+            </div></a>
+            <a href="umbrella">  <div class="center-list121">
+                <div class="center-list121-top">
+                    <img src="uploads/umbrella.png" alt="">
+                </div>
+                <div class="center-list121-bottom">
+                    <p>无需</p>
+                </div>
+            </div></a>
+            <a href="umbrella">  <div class="center-list121">
+                <div class="center-list121-top">
+                    <img src="uploads/umbrella.png" alt="">
+                </div>
+                <div class="center-list121-bottom">
+                    <p>无需</p>
+                </div>
+            </div></a>
+            <a href="umbrella">  <div class="center-list121">
+                <div class="center-list121-top">
+                    <img src="uploads/umbrella.png" alt="">
+                </div>
+                <div class="center-list121-bottom">
+                    <p>无需</p>
+                </div>
+            </div></a>
+
+
+        </div>
+    </div>
+    <div class="main-bottom">
+        <a href="main">  <div class="main-bottom-left lift111">
+            <div class="main-bottom-left-top"><img src="uploads/mainlogo.png" alt=""></div>
+            <div class="main-bottom-left-bottom"><p>天气</p></div>
+        </div></a>
+        <a href="turist">  <div class="main-bottom-left">
+            <div class="main-bottom-left-top"><img src="uploads/listlogo.png" alt=""></div>
+            <div class="main-bottom-left-bottom"><p>景区天气</p></div>
+        </div></a>
+         <div class="main-bottom-left btn12">
+            <div class="main-bottom-left-top"><img src="uploads/mylogo.png" alt=""></div>
+            <div class="main-bottom-left-bottom"><p>我的</p></div>
+        </div>
+    </div>
+
+<!--</div>-->
+<!--<script>-->
+
+    <!--window.onload = function() {-->
+        <!--// 参数说明-->
+        <!--/*-->
+    <!--        ** pre 绘制的环的进行度-->
+    <!--        */-->
+        <!--var pre = 7-->
+        <!--draw(pre)-->
+        <!--function drawCrice(deg) {-->
+            <!--var path = document.getElementById('ring');-->
+            <!--var r=100;-->
+            <!--var progress=deg/100;-->
+
+            <!--//将path平移到我们需要的坐标位置-->
+            <!--ring.setAttribute('transform', 'translate('+2*r+','+2*r+')');-->
+
+            <!--// 计算当前的进度对应的角度值-->
+            <!--var degrees = progress * 360;-->
+
+            <!--// 计算当前角度对应的弧度值-->
+            <!--var rad = degrees* (Math.PI / 180);-->
+
+            <!--//极坐标转换成直角坐标-->
+            <!--var x = (Math.sin(rad) * r).toFixed(2);-->
+            <!--var y = -(Math.cos(rad) * r).toFixed(2);-->
+            <!--var lenghty = window.Number(degrees > 180);-->
+
+            <!--//path 属性-->
+            <!--if (x == '-0.00') {-->
+                <!--x = '-0.01'-->
+            <!--}-->
+            <!--var descriptions = ['M', 0, -r, 'A', r, r, 0,lenghty, 1, x, y];-->
+
+            <!--// 给path 设置属性-->
+            <!--path.setAttribute('d', descriptions.join(' '));-->
+        <!--}-->
+        <!--// 画圆-->
+        <!--function draw(pre){-->
+            <!--var text = document.getElementById('conText')-->
+            <!--text.innerHTML = ''-->
+            <!--for(var i=0;i<=pre;i++){-->
+                <!--(function(){-->
+                    <!--var j=i;-->
+
+                    <!--setTimeout(function(){-->
+                        <!--drawCrice(j);-->
+                        <!--text.innerHTML = 'pm2.5含量：'+ j + '%';-->
+                    <!--},j*20)-->
+                <!--})()-->
+            <!--}-->
+
+        <!--}-->
+    <!--}-->
+
+
+<!--</script>-->
+</div>
+
+<!--动态圆-->
+
+<script>
+    'use strict';
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    var ProgressCircle = function () {
+        function ProgressCircle(percent, radius, elementClass) {
+            _classCallCheck(this, ProgressCircle);
+
+            this._percent = percent;
+            this._radius = radius;
+            this._elementClass = elementClass;
+        }
+
+        _createClass(ProgressCircle, [{
+            key: 'calcDashOffset',
+            value: function calcDashOffset() {
+                var circumference = Math.PI * (2 * this.radius);
+                return Math.floor(circumference - this.percent / 100 * circumference);
+            }
+        }, {
+            key: 'createCSS',
+            value: function createCSS() {
+                document.querySelectorAll('.' + this._elementClass + ' .donut__svg .donut__svg__circle--one')[0].style.strokeDashoffset = this.calcDashOffset();
+            }
+        }, {
+            key: 'updateText',
+            value: function updateText() {
+                document.querySelectorAll('.' + this.elementClass + ' .js-donut-figure')[0].innerText = this.percent;
+            }
+        }, {
+            key: 'updateFigure',
+            value: function updateFigure(newStat) {
+                this._percent = newStat;
+                this.updateText();
+                this.createCSS();
+            }
+        }, {
+            key: 'init',
+            value: function init() {
+                var _this = this;
+
+                this.updateText();
+
+                setTimeout(function () {
+                    _this.createCSS();
+                }, 1000);
+            }
+        }, {
+            key: 'percent',
+            get: function get() {
+                return this._percent;
+            }
+        }, {
+            key: 'radius',
+            get: function get() {
+                return this._radius;
+            }
+        }, {
+            key: 'elementClass',
+            get: function get() {
+                return this._elementClass;
+                return document.getElementsByClassName(this._elementClass)[0];
+            }
+        }]);
+
+        return ProgressCircle;
+    }();
+
+    var progress = new ProgressCircle(82, 90, 'donut');/*改变数值*/
+    progress.init();
+</script>
+
+<!--动态圆结束-->
+
+<script type="text/javascript">
+
+    new Vue({
+        el: '.center',
+        data:{
+
+            curindex:'nothing',
+
+            myData:[],/*存放内容*/
+            myData1:[],
+            myData2:[],
+
+
+
+        },
+
+
+        created:function(){/*渲染的段落数据*/
+            var that = this;
+            this.$http.get('/getlist5-main').then(function (res,err) {
+                that.myData=res.body.list
+                console.log(that.myData)
+                console.log(res.body)
+            })
+
+
+            this.$http.get('/getlist5').then(function (res,err) {
+                that.myData1=res.body.list
+                console.log(that.myData1)
+                console.log(res.body.list)
+            })
+
+            this.$http.get('/getlist5-img').then(function (res,err) {
+                that.myData2=res.body.list
+                console.log(that.myData2)
+                console.log(res.body)
+            })
+        },
+
+
+
+
+
+
+
+
+    })
+</script>
+
+<script>
+    $('.btn12').click(function(){
+        if(!$.cookie('token')){
+            location.href='/my';
+
+        }else if ($.cookie('token')){
+            location.href = '/my1';
+        }
+    })
+    $('.btn11').click(function(){
+        if(!$.cookie('token')){
+            location.href='/login';
+
+        }else if ($.cookie('token')){
+            location.href = '/enjoy';
+        }
+    })
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

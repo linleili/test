@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>娱乐页后台</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/admin-index.css">
+    <style>
+        img{
+            margin-left: -222px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="top">
+
+    <ul>
+        <li><a href="index-index">景区天气</a></li>
+        <li><a href="new-index">景区天气详情页2</a></li>
+        <li><a href="war-index">景区天气详情页1</a></li>
+        <li><a href="main-index">首页天气</a></li>
+        <li><a class="active" href="yule-index">首页天气详情页2</a></li>
+        <li><a href="admin-index">首页天气详情页1</a></li>
+        <li><a href="fankui-index">用户反馈</a></li>
+    </ul>
+
+</div>
+<div class="table111">
+<table class="table table-bordered">
+    <thead><td><a href="/yule-add"><button type="button" class="btn btn-warning ">增删标题</button></a></td></thead>
+    <tbody class="j-main"></tbody>
+</table>
+</div>
+<div class="table111">
+<table class="table table-bordered">
+<thead><td><a href="/yule-add-img"><button type="button" class="btn btn-warning ">增删广告栏</button></a></td></thead>
+    <tbody class="j-main-img"></tbody>
+</table>
+</div>
+<div class="table111">
+<table class="table table-bordered">
+    <thead><td><a href="/yule-add-main"><button type="button" class="btn btn-warning ">增删内容和图片</button></a></td></thead>
+    <tbody class="j-main-main"></tbody>
+</table>
+</div>
+    <script id="tem-main" type="text/x-handlebars-template">
+        {{#list}}
+        <tr><td><a class="gai111" href="/yule-detail/{{_id}}">{{title}}</a></td></tr>
+        {{/list}}
+    </script>
+
+<script id="tem-main-img" type="text/x-handlebars-template">
+    {{#each list}}
+    <tr><td><a class="gai111" href="/yule-detail-img/{{_id}}"><img src="{{img}}" alt=""></a></td></tr>
+    {{/each}}
+</script>
+
+<script id="tem-main-main" type="text/x-handlebars-template">
+    {{#each list}}
+    <tr><td>
+        当前标题：
+        {{title}}
+    </td>
+        <td><a class="gai111" href="/yule-detail-main/{{_id}}"><img src="{{img}}" alt=""></a></td></tr>
+    {{/each}}
+</script>
+
+    <script src="/js/handlebars.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+
+        //从服务器取数据
+        //渲染页面
+        $.get('/getlist1', function(res){
+            console.log(res)
+            var myTemplate = Handlebars.compile($('#tem-main').html());
+            var html = myTemplate(res)
+            $('.j-main').html(html)
+        })
+
+        $.get('/getlist1-img', function(res){
+            console.log(res)
+            var myTemplate1 = Handlebars.compile($('#tem-main-img').html());
+            var html = myTemplate1(res)
+            $('.j-main-img').html(html)
+        })
+
+
+
+        $.get('/getlist1-main', function(res){
+            console.log(res)
+            var myTemplate1 = Handlebars.compile($('#tem-main-main').html());
+            var html = myTemplate1(res)
+            $('.j-main-main').html(html)
+        })
+
+        if ( !$.cookie('token1') ){
+            location.href = '/login';
+        }
+    </script>
+</body>
+</html>

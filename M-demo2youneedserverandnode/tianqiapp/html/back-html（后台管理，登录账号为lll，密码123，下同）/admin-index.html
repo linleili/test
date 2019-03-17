@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>北海还珠堂</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/admin-index.css">
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <style>
+        img{
+            margin-left: -222px;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+
+    <ul>
+        <li><a href="index-index">景区天气</a></li>
+        <li><a href="new-index">景区天气详情页2</a></li>
+        <li><a href="war-index">景区天气详情页1</a></li>
+        <li><a href="main-index">首页天气</a></li>
+        <li><a href="yule-index">首页天气详情页2</a></li>
+        <li><a class="active" href="admin-index">首页天气详情页1</a></li>
+        <li><a href="fankui-index">用户反馈</a></li>
+    </ul>
+
+</div>
+<div class="table111">
+<table class="table table-bordered">
+    <thead><td><a class="addt111" href="/admin-add"><button type="button" class="btn btn-warning">增加标题</button></a></td></thead>
+    <tbody class="j-main"></tbody>
+</table>
+</div>
+<div class="table111">
+<table class="table table-bordered">
+<thead><td><a href="/admin-add-img"><button type="button" class="btn btn-warning">增加内容</button></a></td></thead>
+    <tbody class="j-main-img"></tbody>
+</table>
+</div>
+<div class="table111">
+<table class="table table-bordered">
+    <thead><td><a href="/admin-add-main"><button type="button" class="btn btn-warning">增加内容和图片</button></a></td></thead>
+    <tbody class="j-main-main"></tbody>
+</table>
+</div>
+    <script id="tem-main" type="text/x-handlebars-template">
+        {{#list}}
+        <tr><td><a class="gai111" href="/admin-detail/{{_id}}">{{title}}</a></td></tr>
+        {{/list}}
+    </script>
+
+<script id="tem-main-img" type="text/x-handlebars-template">
+    {{#each list}}
+    <tr><td><a class="gai111" href="/admin-detail-img/{{_id}}"><img src="{{img}}" alt=""></a></td></tr>
+    {{/each}}
+</script>
+
+<script id="tem-main-main" type="text/x-handlebars-template">
+    {{#each list}}
+    <tr><td>
+        当前标题：{{title}}
+    </td>
+    <td><a class="gai111" href="/admin-detail-main/{{_id}}"><img src="{{img}}" alt=""></a></td></tr>
+    {{/each}}
+</script>
+
+    <script src="/js/handlebars.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+
+        //从服务器取数据
+        //渲染页面
+        $.get('/getlist', function(res){
+            console.log(res)
+            var myTemplate = Handlebars.compile($('#tem-main').html());
+            var html = myTemplate(res)
+            $('.j-main').html(html)
+        })
+
+        $.get('/getlist-img', function(res){
+            console.log(res)
+            var myTemplate1 = Handlebars.compile($('#tem-main-img').html());
+            var html = myTemplate1(res)
+            $('.j-main-img').html(html)
+        })
+
+        // $.ajax({/*然后再使用ajax提交给服务端*//*上传图片用这一段*/
+        //     type: 'POST',
+        //     url: '/getlist-main',
+        //     cache: false,
+        //     processData: false,
+        //     contentType:false,
+        //     data: formdata,
+        //     dataType:'json'
+        // }).done(function(res){/**/
+        //     var myTemplate1 = Handlebars.compile($('#tem-main-main').html());
+        //     var html = myTemplate1(res)
+        //     $('.j-main-main').html(html)
+        //
+        // })
+
+        $.get('/getlist-main', function(res){
+            console.log(res)
+            var myTemplate1 = Handlebars.compile($('#tem-main-main').html());
+            var html = myTemplate1(res)
+            $('.j-main-main').html(html)
+        })
+
+        if ( !$.cookie('token1') ){
+            location.href = '/login';
+        }
+    </script>
+</body>
+</html>

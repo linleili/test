@@ -1,0 +1,242 @@
+.center{
+    width: 100%;
+    height: 40rem;
+    background-color: yellow;
+    position: relative;
+}
+.center .img2{
+    width: 100%;
+    height: 100%;
+}
+.img1{
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    width: 4rem;
+    height: 7rem;
+}
+.row2{
+    position: absolute;
+    bottom: 7rem;
+    left: 10%;
+    font-size: 4rem;
+    width: 80%;
+    height: 9rem;
+}
+.row2 p{
+    font-family: 微软雅黑;
+    color: white;
+    font-size: 4rem;
+    position: absolute;
+    left: -150%;
+    top: -65%;
+}
+#expressArea{
+    background-color: white;
+    padding-left:30px;
+}
+
+.row2 input{
+    width: 100%;
+    height: 9rem;
+    padding-left: 3rem;
+    font-family: 微软雅黑;
+    border-top-left-radius: 55px;
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+
+    border-bottom-right-radius: 55px;
+}
+.search{
+    width: 17rem;
+    height: 9rem;
+    position: absolute;
+    top: 0rem;
+    right: 0;
+    background-color: rgb(0,200,184);
+    border-top-right-radius: 55px;
+
+    border-bottom-right-radius: 55px;
+}
+.search img{
+    width: 81%;
+    margin: auto;
+    height: 95%;
+    padding-top: 4%;
+    padding-left: 20%;
+
+
+}
+
+.ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio):not(.ui-radio-s) {
+    width: 95px;
+    position: absolute;
+    padding-right: 10px;
+    text-align: right;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #666666;
+}
+
+.ui-form-item > .ui-select {
+    margin-left: 10px;
+}
+.ui-select {
+    position: relative;
+    margin-right: 6px;
+}
+.ui-form-item input, .ui-form-item textarea {
+    text-align: left;
+    width: 100%;
+    min-height: 25px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    border: 0;
+    background: 0 0;
+    padding-left: 0;
+}
+input, input:focus, input:active {
+    user-select: text;
+}
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    outline: 0;
+}
+.ui-select:after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -4px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    color: #a6a6a6;
+    content: "";
+    pointer-events: none;
+    border: 0;
+
+    height: 20px;
+    width: 20px;
+    background-size: 100%;
+    top: 35%;
+    right: -5px;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #a6a6a6;
+}
+.ui-form-item span {
+    display: block;
+    padding-left: 60px;
+    width: 100%;
+    /* text-align: left; */
+    color: #000;
+}
+.p12121{
+    font-family: 微软雅黑;
+    font-size: 5rem;
+    text-align:  center;
+}
+.ppp{
+    text-align: left;
+}
+.main{
+    width: 100%;
+    height: 146rem;
+
+}
+.list p{
+    padding-top: 7%;
+}
+.list-div{
+    width: 90%;
+    margin: auto;
+    height: 33rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.list:hover{
+    color: rgb(87,219,208);
+}
+.list{
+    width:17rem;
+    height: 8rem;
+    font-family: 微软雅黑;
+    color: gray;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 4rem;
+    border: gray 1px solid;
+    border-top-left-radius: 55px;
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    border-bottom-right-radius: 55px;
+}
+
+.line-left{
+    width: 12%;
+    float: left;
+    height: 0.1rem;
+    background-color: #00d8d8;
+    /*float: left;*/
+    margin-top: 5rem;
+}
+
+.line{
+    width: 46%;
+    height: 13rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+.line-right{
+    width: 12%;
+
+    height: 0.1rem;
+    background-color: #00d8d8;
+    /*float: right;*/
+    margin-top: 5rem;
+}
+.line span{
+    font-size: 5rem;
+    color: gray;
+    font-family: 微软雅黑;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /*float: left;*/
+    /*margin-left: 20%;*/
+}
+
+
+
+
+
+
+
+
+
+*{
+    list-style-type: none;
+}
+
+
+
+
+
+
+@media (min-width: 1025px) {
+    .center{height: 70rem;
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bs插件</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/admin-index.css">
+</head>
+
+<body>
+<div class="top2">
+    <p class="ggbot">详情-内容和图片修改</p>
+</div>
+</br>
+<p class="j-del btn btn-primary">删除</p>
+<form class="j-form "></form>
+
+<script id="tem-main" type="text/x-handlebars-template">
+    <input type="hidden" name="id" value="{{_id}}">
+    <div class="form-group">
+        <label>标题：</label>
+        <input type="text" class="form-control" value="{{title}}" name="title" />
+    </div>
+    <div class="form-group">
+        <label>图片：</label>
+        <img src="{{img}}" alt="">
+        <input type="file" class="form-control j-upload" name="img" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">提交</button>
+    </div>
+</script>
+
+<script src="/js/handlebars.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script>
+
+    var getParamsSting = function(){
+        var matchstring = location.href.match(/detail-main\/(.*)$/);
+        return !!matchstring ? matchstring[1] : null
+    }
+
+    var _id = getParamsSting();
+
+    function changeview(res){
+        var myTemplate = Handlebars.compile($('#tem-main').html());
+        var html = myTemplate(res)
+        $('.j-form').html(html)
+    }
+
+    $.get('/getlistItem-main/' + _id, function(res){
+        if (res.code == 0){
+            changeview(res.info)
+        }
+    })
+
+    $('.j-form').on('submit', function(){
+        var myphoto = $('.j-upload')[0].files[0],
+            formdata = new FormData();
+
+        $('input', this).each(function(){
+            formdata.append($(this).attr('name'), $(this).val())
+        })
+
+        formdata.append($('.j-upload').attr('name'), myphoto)
+
+        $.ajax({
+            type: 'POST',
+            url: '/update-main/'+ _id,
+            cache: false,
+            processData: false,
+            contentType:false,
+            data: formdata,
+            dataType:'json'
+        }).done(function(res){
+            if (res.code == 0) {
+                location.href = '/admin-index'
+            }
+        })
+
+        //阻止默认的提交事件
+        return false;
+    })
+
+    $('.j-del').click(function(){
+        $.get('/del-main/' + _id, function(res){
+            if (res.code == 0){
+                location.href = '/admin-index'
+            }
+        })
+    })
+
+    if ( !$.cookie('token1') ){
+        location.href = '/login';
+    }
+</script>
+</body>
+</html>

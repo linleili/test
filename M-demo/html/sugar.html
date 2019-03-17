@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情页</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/handlebars.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-router.js"></script>
+    <script src="../js/vue-resource.js"></script>
+    <script src="../js/zepto.plugin.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <!--<script src="/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="../css/sugar.css">
+</head>
+<body>
+<div class="center">
+    <div class="main">
+        <a href="turist.html"><div class="main-left"><img src="../uploads/shot.png" alt=""></div></a>
+        <div class="main-right">
+            <p>北海还珠堂</p>
+        </div>
+    </div>
+    <div class="center-center">
+
+        <img src="../uploads/sugar.jpg" alt="">
+        <span>展馆</span>
+        <p>历史展馆还珠堂</p>
+    </div>
+    <div class="center-list">
+        <div class="center-list-top"><p>景区天气详情</p></div>
+      <div class="center-list-center">
+          <ul>
+              <li class="tab" data-index='0'>
+               <div class="center-list-center-list">
+              <p>昨天</p>
+              <p>07/30</p>
+          </div>
+
+
+              </li>
+              <li class="tab" data-index='1'>   <div class="center-list-center-list">
+                  <p>今天</p>
+                  <p>07/30</p>
+              </div>
+
+              </li>
+              <li class="tab" data-index='2'>  <div class="center-list-center-list">
+                  <p>星期三</p>
+                  <p>07/30</p>
+              </div></li>
+              <li class="tab" data-index='3'>  <div class="center-list-center-list">
+                  <p>星期四</p>
+                  <p>07/30</p>
+              </div></li>
+              <li class="tab" data-index='4'>  <div class="center-list-center-list">
+                  <p>星期五</p>
+                  <p>07/30</p>
+              </div></li>
+              <li class="tab" data-index='5'>  <div class="center-list-center-list">
+                  <p>星期六</p>
+                  <p>07/30</p>
+              </div></li>
+          </ul>
+      </div>
+
+<div class="center-list-bottom">
+    <div class="center-list-bottom-left">
+        <img src="../uploads/sun.jpg" alt="" class="img3">
+        <p class="p1">晴</p>
+        <div class="center-list-bottom-left-top"><!--<img :src="item.img" alt="">--><img src="../uploads/sun1.jpg" alt=""></div>
+        <!--<div class="center-list-bottom-left-top">&lt;!&ndash;<img :src="item.img" alt="">&ndash;&gt;<img src="uploads/sun1.jpg" alt=""></div>-->
+        <div class="center-list111">
+            <div class="center-list222">
+                <p>日出05:15</p>
+            </div>
+            <div class="center-list222">
+                <p>日落18:15</p>
+            </div>
+        </div>
+    </div>
+
+    <div v-for="item in myData1" class="center-list-bottom-right">
+        <div class="center-list-center111">
+            <div class="list-center-left"><p>温度</p></div>
+            <div class="list-center-right">
+
+                <p class="p2">25</p>
+            </div>
+        </div>
+        <div class="center-list-center111">
+            <div class="list-center-left"><p>风力</p></div>
+            <div class="list-center-right">
+
+                <p class="p2">东南风三级</p>
+            </div>
+        </div>
+        <div class="center-list-center111 center1122">
+            <div class="list-center-left"><p>空气质量</p></div>
+            <div class="list-center-right">
+
+                <p class="p2">63&emsp;良</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="center-bottom">
+        <div class="center-list-top"><p>景区讲简介</p>
+
+            <div class="center-list-center1"><p>&emsp;&emsp;此处是景区简介。。。</p></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var lis = document.getElementsByClassName('tab');
+    for(var i=0; i<lis.length; i++){
+        lis[i].onclick = function(){
+            var that = this;
+            for(var i=0; i<lis.length; i++){
+                lis[i].classList.remove('active')
+                this.classList.add('active')
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/index.css">
+    <script src="./bootstrap/js/handlebars.js"></script>
+</head>
+<body>
+
+<div class="top">
+    <h2>用户信息系统</h2>
+</div>
+
+<div class="center">
+
+    <div class="center-left pull-left ">
+        <div class="left1"><a href="index.html" class="pull-left"><h3>信息列表</h3></a></div>
+        <div class="left2"><a href="list.html" class="pull-left"><h3>用户列表</h3></a></div>
+    </div>
+    <div class="center-right pull-right ">
+        <div class="bs-example" data-example-id="bordered-table">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>用户id</th>
+                    <th>电话</th>
+                    <th>发帖数</th>
+                </tr>
+                </thead>
+                <tbody class="clearfix j-item">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <form class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">用户详情</h4>
+            </div>
+            <div class="modal-body form-inline">
+                <div class="form-group">
+                    <p><h3>用户信息</h3></p><br>
+                    <div class="list"></div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success j-btn">确定</button>
+            </div>
+        </form><!--点击提交按钮会提交包含按钮的form表单的所有元素-->
+    </div>
+</div>
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script id="tem-main" type="text/x-handlebars-template">
+    {{#each list}}
+    <tr class="j-li">
+        <td class="col-lg-3 col-md-3">
+            <p class="test">{{author}}</p>
+        </td>
+        <td class="col-lg-3 col-md-3">
+            <p class="test1">{{tid}}</p>
+        </td>
+        <td class="col-lg-3 col-md-3">
+            <p class="test2">{{tel}}</p>
+        </td>
+        <td class="col-lg-3 col-md-3">
+            <p>{{replynum}}</p>
+        </td>
+    </tr>
+    {{/each}}
+</script>
+<script>
+    window.onload=function(){
+        getData(1);
+    };
+    function opModal(type) {/*把modal显示隐藏提出来*/
+        $('#myModal').modal(type)
+        // return false;
+    };
+
+    function getData(id) {/*传入参数*/
+        $.ajax({
+            method: "GET",
+            url: "https://easy-mock.com/mock/5c049dc5a0ef2373aa8fb015/list/user",
+            data: {}/*data:{}固定写法*/
+        }).done(function (data) {
+            var tem = Handlebars.compile($("#tem-main").html());
+            $('.j-item').html(tem(data.data));
+        });
+        $('.j-item').on('click','.j-li',function(){
+            var   id = $(this).find('.test').text();
+            var  tle = $(this).find('.test2').text();
+            var  tid = $(this).find('.test1').text();
+
+            a = '<p class="pull-left col-lg-3">用户名：'+id+'</p>'+'<p class="pull-left col-lg-3">用户id：'+tid+'</p>'+
+                '<p class="pull-left col-lg-6 col-md-9">用户电话：'+tle+'</p>';
+            $(".list").html(a);
+            opModal('show');
+            return false;
+        });
+
+    }
+
+</script>
+</body>
+</html>

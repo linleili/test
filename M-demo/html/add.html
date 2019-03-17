@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加</title>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/handlebars.js"></script>
+
+
+    <link rel="stylesheet" href="../css/add.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <link rel="stylesheet" type="text/css" href="../css/area.css">
+    <script src="../js/zepto.plugin.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="main">
+<div class="center">
+    <a href="turist.html"> <img src="../uploads/shot.png" alt="" class="img1"></a>
+    <img src="../uploads/house.jpg" alt="" class="img2">
+
+    <div class="row2 ui-form-item">
+        <div class="ui-select">
+            <input id="expressArea" data-name="custUa" data-required="true" data-label="单位地址" placeholder="选择省市区" >
+        </div>
+        <!--<input type="text"placeholder="输入城市名">-->
+        <div class="search"><img src="../uploads/search.png" alt="">
+            <p>世界，一个触碰的距离</p></div>
+
+        <div class="browser">
+
+            <!--选择地区弹层-->
+            <section id="areaLayer" class="express-area-box">
+                <header>
+                    <span class="p12121">选择省市区</span>
+                    <div class="selet-area-wrap">
+                        <p><span class="one"></span></p>
+                        <p><span class="two"></span></p>
+                        <p><span class="three"></span></p>
+                    </div>
+                    <div class="hot-city">
+                        <span class="p12121 ppp">热门城市</span>
+                        <ul>
+                            <li onClick="selectPP(0,1)">北京</li>
+                            <li onClick="selectPP(10,1)">上海</li>
+                            <li onClick="quickselectC(18,0)">广州</li>
+                            <li onClick="quickselectC(18,1)">深圳</li>
+                            <li onClick="quickselectC(12,0)">杭州</li>
+                            <li onClick="quickselectC(11,0)">南京</li>
+                            <li onClick="quickselectC(11,4)">苏州</li>
+                            <li onClick="selectPP(1,1)">天津</li>
+                            <li onClick="quickselectC(16,0)">武汉</li>
+                            <li onClick="quickselectC(17,0)">长沙</li>
+                            <li onClick="selectPP(21,1)">重庆</li>
+                            <li onClick="quickselectC(22,0)">成都</li>
+                        </ul>
+                        <p>选择省份/地区</p>
+                    </div>
+                    <a id="backUp" class="back" href="javascript:void(0)" title="返回"></a>
+                    <a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
+                </header>
+                <article id="areaBox">
+                    <ul id="areaList" class="area-list"></ul>
+                </article>
+            </section>
+            <!--遮罩层-->
+            <div id="areaMask" class="mask"></div>
+        </div>
+    </div>
+</div>
+    <div class="line">
+        <div class="line-left"></div>
+        <span>热门城市</span>
+        <div class="line-right"></div>
+
+    </div>
+    <div class="list-div">
+    <div class="list"><p>海城区</p></div>
+    <div class="list"><p>南宁市</p></div>
+    <div class="list"><p>桂林市</p></div>
+    <div class="list"><p>贵港市</p></div>
+    <div class="list"><p>北京市</p></div>
+    <div class="list"><p>北海市</p></div>
+    <div class="list"><p>梧州市</p></div>
+    <div class="list"><p>柳州市</p></div>
+    <div class="list"><p>玄武区</p></div>
+    </div>
+    <div class="line">
+        <div class="line-left"></div>
+        <span>国内城市</span>
+        <div class="line-right"></div>
+
+    </div>
+    <div class="list-div">
+        <div class="list"><p>海城区</p></div>
+        <div class="list"><p>南宁市</p></div>
+        <div class="list"><p>桂林市</p></div>
+        <div class="list"><p>贵港市</p></div>
+        <div class="list"><p>北京市</p></div>
+        <div class="list"><p>北海市</p></div>
+        <div class="list"><p>梧州市</p></div>
+        <div class="list"><p>柳州市</p></div>
+        <div class="list"><p>玄武区</p></div>
+    </div>
+</div>
+<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.area.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

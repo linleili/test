@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>反馈</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/zepto.min.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="css/umbrella.css">
+    <script src="/js/vue.js"></script>
+    <script src="/js/vue-router.js"></script>
+    <script src="/js/vue-resource.js"></script>
+    <script src="/js/zepto.plugin.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        .j-form-main{
+            width: 100%;
+
+        }
+        .text1{
+            width: 93%;
+            margin-left: 3rem;
+            height: 20rem;
+            font-size: 5rem;
+            margin-top: 5rem;
+            border-top: 1rem;
+            /*margin-left: 4rem;*/
+        }
+        .btn22{
+            /*margin: auto;*/
+            width: 90%;
+            height: 9rem;
+            margin-top: 5rem;
+            margin-left: 5%;
+            text-align: center;
+            font-size: 5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="center">
+    <div class="main">
+        <a href="my1"><div class="main-left"><img src="uploads/shot.png" alt=""></div></a>
+        <div class="main-right">
+            <p>反馈</p>
+        </div>
+
+        <!--<a href="enjoy"> <img src="uploads/fly.png" alt="" class="img2333"></a>-->
+
+    </div>
+
+    <form class="j-form-main">
+
+        <textarea class="text1 j-upload" rows="8" cols="40" name="title"></textarea>
+        <!--<button type="submit" class="btn btn-primary">提交</button>-->
+        <button type="submit" class="btn btn-primary btn22">提交</button>
+    </form>
+</div>
+<script>
+
+    $('.j-form-main').submit(function(){
+        $.post('/add6', {title: $('.j-upload').val()}, function(res){
+            if (res.code == 0){
+                location.href = '/my1'
+            }
+        })
+        //阻止默认的提交事件
+        return false;
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

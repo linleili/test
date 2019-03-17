@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>景区天气</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/vue.js"></script>
+    <script src="/js/vue-router.js"></script>
+    <script src="/js/vue-resource.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="js/zepto.min.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="/js/swiper.js"></script>
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <link rel="stylesheet" href="css/turist.css">
+
+    <script src="/js/zepto.plugin.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="center">
+    <div class="main">
+        <div class="main-left">
+            <img src="uploads/position.png" alt="">
+            <p>广西北海</p>
+        </div>
+        <div class="main-right">
+            <img src="uploads/search.png" alt="">
+            <a href="add">
+            <form>
+                <div class="form-group">
+
+                    <input type="text" class="form-control" id="text1" placeholder="海洋公园">
+                </div>
+
+            </form></a>
+        </div>
+    </div>
+
+    <div class="center-top swiper-container">
+        <div class="center-top-img swiper-wrapper">
+            <div class="swiper-slide"><img src="uploads/people.jpg" alt="">
+            <div class="center-top-text">
+
+            </div>
+            <p>广西北海-园博园</p></div>
+            <div class="swiper-slide"><img src="uploads/people.jpg" alt="">
+                <div class="center-top-text">
+
+                </div>
+                <p>广西北海-园博园</p></div>
+            <div class="swiper-slide"><img src="uploads/people.jpg" alt="">
+                <div class="center-top-text">
+
+                </div>
+                <p>广西北海-园博园</p></div>
+
+        </div>
+    </div>
+
+    <div class="center-center">
+        <div class="center-center-top">
+            <img src="uploads/position.jpg" alt="">
+            <p>当前距离你最近的景区</p>
+        </div>
+        <a href="sugar"> <div v-for="item in myData2" class="center-center-bottom">
+            <img :src="item.img" alt="">
+            <!--<img src="uploads/river.jpg" alt="">-->
+            <div v-for="item in myData1" class="center-bottom-left">
+                <p>{{item.title}}</p>
+                <span>1.17km</span>
+            </div>
+            <div class="center-bottom-right">
+                <div class="center-bottom-right-top">
+                <img src="uploads/sun.png" alt="">
+                <p>多云</p>
+                </div>
+                <div class="center-bottom-right-bottom">
+                    <p>空气 优</p>
+                </div>
+            </div>
+        </div></a>
+    </div>
+
+    <div class="center-center">
+        <div class="center-center-top">
+            <img src="uploads/position.jpg" alt="">
+            <p>更多景区推荐</p>
+        </div>
+        <div class="center-center-bottom">
+
+<div v-for="item in myData" class="center-center-bottom-left">
+    <a href="more"> <div class="center-center-bottom-left-top">
+        <img :src="item.img" alt="">
+     <!--   <img src="uploads/moutains.jpg" alt="">-->
+
+
+        <div class="center-center1-bottom-right">
+            <div class="center-bottom-right-top1">
+                <img src="uploads/sun.png" alt="">
+                <p>多云</p>
+            </div>
+            <div class="center-bottom-right-bottom">
+                <p>空气 优</p>
+            </div>
+        </div>
+    </div></a>
+    <div class="center-center-bottom-left-bottom">
+        <div class="left11"><p>{{item.title}}</p></div>
+        <div class="right11"><p>1.17km</p></div>
+    </div>
+</div>
+
+            <!--<div class="center-center-bottom-left">-->
+                <!--<a href="more"> <div class="center-center-bottom-left-top">-->
+                    <!--<img src="uploads/moutains.jpg" alt="">-->
+
+
+                    <!--<div class="center-center1-bottom-right">-->
+                        <!--<div class="center-bottom-right-top1">-->
+                            <!--<img src="uploads/sun.png" alt="">-->
+                            <!--<p>多云</p>-->
+                        <!--</div>-->
+                        <!--<div class="center-bottom-right-bottom">-->
+                            <!--<p>空气 优</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div></a>-->
+                <!--<div class="center-center-bottom-left-bottom">-->
+                    <!--<div class="left11"><p>北海银滩</p></div>-->
+                    <!--<div class="right11"><p>1.17km</p></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="center-center-bottom-right">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="center-center-bottom-right-top"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="center-center-bottom-right-bottom"></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+        <!--</div>-->
+        <!--<div class="clear:both"></div>-->
+
+
+        <!--<div class="center-center-bottom">-->
+
+            <!--<div class="center-center-bottom-left">-->
+                <!--<a href="more"> <div class="center-center-bottom-left-top">-->
+                    <!--<img src="uploads/moutains.jpg" alt="">-->
+
+
+                    <!--<div class="center-center1-bottom-right">-->
+                        <!--<div class="center-bottom-right-top1">-->
+                            <!--<img src="uploads/sun.png" alt="">-->
+                            <!--<p>多云</p>-->
+                        <!--</div>-->
+                        <!--<div class="center-bottom-right-bottom">-->
+                            <!--<p>空气 优</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div></a>-->
+                <!--<div class="center-center-bottom-left-bottom">-->
+                    <!--<div class="left11"><p>北海银滩</p></div>-->
+                    <!--<div class="right11"><p>1.17km</p></div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="center-center-bottom-left">-->
+                <!--<a href="more"> <div class="center-center-bottom-left-top">-->
+                    <!--<img src="uploads/moutains.jpg" alt="">-->
+
+
+                    <!--<div class="center-center1-bottom-right">-->
+                        <!--<div class="center-bottom-right-top1">-->
+                            <!--<img src="uploads/sun.png" alt="">-->
+                            <!--<p>多云</p>-->
+                        <!--</div>-->
+                        <!--<div class="center-bottom-right-bottom">-->
+                            <!--<p>空气 优</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div></a>-->
+                <!--<div class="center-center-bottom-left-bottom">-->
+                    <!--<div class="left11"><p>北海银滩</p></div>-->
+                    <!--<div class="right11"><p>1.17km</p></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="center-center-bottom-right">-->
+            <!--<div class="center-center-bottom-right-top"></div>-->
+            <!--<div class="center-center-bottom-right-bottom"></div>-->
+            <!--</div>-->
+
+        </div>
+    </div>
+    <div class="main-bottom">
+        <a href="main">  <div class="main-bottom-left">
+            <div class="main-bottom-left-top"><img src="uploads/mainlogo.png" alt=""></div>
+            <div class="main-bottom-left-bottom"><p>天气</p></div>
+        </div></a>
+        <a href="turist">  <div class="main-bottom-left lift111">
+            <div class="main-bottom-left-top"><img src="uploads/listlogo.png" alt=""></div>
+            <div class="main-bottom-left-bottom"><p>景区天气</p></div>
+        </div></a>
+         <div class="main-bottom-left btn12">
+            <div class="main-bottom-left-top"><img src="uploads/mylogo.png" alt=""></div>
+            <div class="main-bottom-left-bottom"><p>我的</p></div>
+        </div>
+    </div>
+</div>
+
+<!--<script src="js/swiper.min.js"></script>-->
+<!--<script>-->
+
+    <!--var mySwiper = new Swiper ('.swiper-container', {-->
+        <!--direction: 'horizontal',-->
+        <!--loop: true,-->
+
+        <!--autoplay : 1000,-->
+        <!--speed:1000-->
+    <!--})-->
+
+
+
+
+
+
+
+
+
+<!--</script>-->
+
+
+<script type="text/javascript">
+
+    new Vue({
+        el: '.center',
+        data:{
+
+            curindex:'nothing',
+
+            myData:[],/*存放内容*/
+            myData1:[],
+            myData2:[],
+
+
+
+        },
+        mounted(){
+            var mySwiper = new Swiper ('.swiper-container', {
+                direction: 'horizontal',
+                loop: true,
+
+                autoplay : 1000,
+                speed:1000
+            })
+
+        },
+
+
+        created:function(){/*渲染的段落数据*/
+            var that = this;
+            this.$http.get('/getlist2-main').then(function (res,err) {
+
+                that.myData=res.body.list
+                console.log(that.myData)
+                console.log(res.body)
+            })
+
+
+            this.$http.get('/getlist2').then(function (res,err) {
+                that.myData1=res.body.list
+                console.log(that.myData1)
+                console.log(res.body.list)
+            })
+
+            this.$http.get('/getlist2-img').then(function (res,err) {
+                that.myData2=res.body.list
+                console.log(that.myData2)
+                console.log(res.body)
+            })
+
+
+        },
+
+
+        // created:function(){/*渲染的段落数据*/
+        //     var that = this;
+        //     this.$http.get('/getlist3-main').then(function (res,err) {
+        //         that.myData=res.body.data
+        //         console.log(that.myData)
+        //     })
+        //     console.log(myData)
+        // },
+
+
+
+
+
+
+    })
+</script>
+
+
+<script>
+    $('.btn12').click(function(){
+        if(!$.cookie('token')){
+            location.href='/my';
+
+        }else if ($.cookie('token')){
+            location.href = '/my1';
+        }
+    })
+
+
+</script>
+</body>
+</html>

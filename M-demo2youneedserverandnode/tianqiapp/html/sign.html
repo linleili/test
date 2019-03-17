@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="js/zepto.min.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/sign.css">
+    <script src="/js/zepto.plugin.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="center">
+<div class="main">
+    <a href="my"> <div class="main-left"><img src="uploads/shot.png" alt=""></div></a>
+    <div class="main-right">
+        <p>注册</p>
+    </div>
+</div>
+    <div class="center-center">
+        <div class="center-center-img"><img src="uploads/logo.jpg" alt=""></div>
+    </div>
+    <div class="text1">
+        <form>
+            <div class="form-group form1">
+                <img src="uploads/phone.jpg" alt="">
+                <input type="text" class="form-control input1 j-name1" id="username" name="username" placeholder="用户名">
+
+            </div>
+            <div class="form-group form3">
+                <img src="uploads/fanghudun.jpg" alt="">
+                <input type="text" class="form-control input1" id="id" name="id" placeholder="验证码">
+            </div>
+            <div class="form-group form2">
+                <img src="uploads/lock.jpg" alt="">
+                <input type="password" class="form-control input2 j-password1" id="password" name="password" placeholder="密码">
+            </div>
+
+
+            <button type="submit" id="login_submit" class="btn btn-default btn1">注册</button>
+        </form>
+</div>
+</div>
+
+<!--<script>-->
+    <!--$("#login_submit").click(function() {-->
+        <!--var username = $('#username').val();-->
+        <!--var password = $('#password').val();-->
+        <!--/*这里实现对username和password格式的判断*/-->
+        <!--$.ajax({-->
+            <!--type: "post",-->
+            <!--url: "http:localhost:3000/login",-->
+            <!--dataType: "json",-->
+            <!--data: {username: username, password: password},-->
+            <!--success: function (data) {-->
+                <!--if (data) {-->
+                    <!--if (data.message == "false") {-->
+                        <!--alert('错误！');-->
+
+                    <!--} else {-->
+                        <!--alert('成功！');-->
+                        <!--window.location.href = "my1";-->
+                    <!--}-->
+                <!--} else {-->
+                <!--}-->
+            <!--}-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+<script>
+    $('.j-form').submit(function(){
+        $.post('/signData', {name1: $('.j-name1').val(), password1: $('.j-password1').val()}, function(res){
+            if (res.code == 0){
+                location.href = '/my1'
+            }else if (res.code==1){
+                console('用户名或id错误，禁止访问');
+            }
+        })
+        //阻止默认的提交事件
+        return false;
+    })
+</script>
+</body>
+</html>

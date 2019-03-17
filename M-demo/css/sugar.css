@@ -1,0 +1,331 @@
+.main{
+    width: 100%;
+    height: 120px;
+    background-image: linear-gradient(to right,rgb(0,164,182),rgb(0,205,184));
+    position: relative;
+}
+.center{
+    width: 100%;
+    height: 1741px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.main-left{
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    float: left;
+    top: 3px;
+    left: 20px;
+}
+.main-left img{
+    width: 6rem;
+    height: 100%;
+}
+.main-right{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    float: right;
+    margin-top: 10px;
+}
+.center-center-img{
+    margin: auto;
+    width: 26.5rem;
+    height: 100%;
+
+}
+.main-right p{
+    color: white;
+    font-size: 6rem;
+    font-family: 微软雅黑;
+}
+
+.center-center{
+    width: 90%;
+    height: 25%;
+    margin: auto;
+    background-color: aqua;
+    margin-top: 3rem;
+    position: relative;
+}
+.center-center img{
+    width: 100%;
+    height: 100%;
+
+}
+.center-center span{
+    width: 11rem;
+    height: 6rem;
+    background-color: yellow;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    font-size: 4rem;
+    padding-left: 1.7rem;
+    color: gray;
+    font-family: 微软雅黑;
+    top: 2rem;
+    right: 3rem;
+}
+.center-center p{
+    font-size: 4rem;
+    /*padding-left: 1.7rem;*/
+    color: white;
+    font-family: 微软雅黑;
+    bottom: 2rem;
+    left: 3rem;
+    position: absolute;
+}
+
+.center-list{
+    width: 90%;
+    height: 29%;
+    /*background-color: gray;*/
+    margin: auto;
+    margin-top: 3rem;
+}
+.center-list-top{
+    width: 100%;
+    height: 5rem;
+    font-family: 微软雅黑;
+    font-size: 4rem;
+    color: #00c3c3;
+    text-align: center;
+}
+
+.center-list-center{
+    width: 100%;
+    height: 27%;
+    position: relative;
+    border-bottom: #b9f4ed 5px solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 2rem;
+}
+.center-list-center ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-left: -21px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transform: translate(2%, 1%);
+    list-style: none;
+}
+.center-list-center ul li{
+    list-style-type: none;
+    position: relative;
+
+    color: #000000;
+    line-height: 1;
+    transition: 0.2s all linear;
+    cursor: pointer;
+    width: 15%;
+    height: 100%;
+    font-family: 微软雅黑;
+    font-size: 4rem;
+    text-align: center;
+}
+.center-list-center-list{
+    width: 96%;
+    height: 100%;
+    font-family: 微软雅黑;
+    font-size: 4rem;
+    text-align: center;
+}
+/*.center-list-center-list:hover{*/
+/*border-bottom: #3cb7ef 5px solid;*/
+/*color: #00c3c3;*/
+/*z-index: 999;*/
+/*}*/
+.center-list-bottom{
+    width: 100%;
+    height: 60%;
+    /*background-color: gray;*/
+    margin-top: 3rem;
+    display: flex;
+    border-bottom: #d9d7d7 3px solid;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.center-list-bottom-left-top{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    /*border-bottom: #d9d7d7 3px solid;*/
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.center-list111{
+    width: 100%;
+    height: 5rem;
+    /*background-color: aqua;*/
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.center-list222{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    color: #00c3c3;
+    font-family: 微软雅黑;
+    font-size: 3rem;
+}
+.center-list-bottom-left-top img{
+    width: 33rem;
+    height: 74%;
+    margin-top: 5rem;
+}
+.center-list-bottom-left{
+    width: 42%;
+    position: relative;
+    height: 100%;
+}
+.img3{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8rem;
+    height: 6rem;
+
+}
+.p1{
+    position: absolute;
+    top: 3rem;
+    right: 7rem;
+    color: #00c3c3;
+    font-size: 4rem;
+    font-family: 微软雅黑;
+}
+
+.center-list-center111{
+    width: 100%;
+    height: 8rem;
+    font-family: 微软雅黑;
+    font-size: 4rem;
+    border-bottom: 1px gray solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.list-center-left{
+    width: 40%;
+    height: 100%;
+    padding-top: 1rem;
+    /*float: left;*/
+    /*background-color: aqua;*/
+}
+.list-center-right{
+    width: 48%;
+    height: 100%;
+    /*float: left;*/
+    /*background-color: aqua;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.list-center-right img{
+    width: 8rem;
+}
+.list-center-right p{
+    padding-top: 1rem;
+}
+.p2{
+    color: #00c3c3;
+}
+.center-list-bottom-right{
+    width: 50%;
+    height: 100%;
+}
+.center1122{
+    border: none;
+}
+
+.center-bottom{
+    width: 90%;
+    height: 25rem;
+    /*background-color: aqua;*/
+    margin: auto;
+    margin-top: 10rem;
+    font-family: 微软雅黑;
+    font-size: 5rem;
+}
+.center-list-center1{
+    width: 100%;
+    height: 25rem;
+    /*background-color: blue;*/
+}
+.center-list-center1 p{
+    color: black;
+}
+
+@media (min-width: 1000px) {
+
+    .center-center{
+        width: 90%;
+        height: 60rem;
+        /*background-color: aqua;*/
+        margin: auto;
+        margin-top: 5rem;
+    }
+}
+
+
+
+
+/*ul {*/
+/*display: flex;*/
+/*position: absolute;*/
+/*width: 800px;*/
+/*top: 50%;*/
+/*left: 50%;*/
+/*transform: translate(-50%, -50%);*/
+/*list-style: none;*/
+/*}*/
+/*li {*/
+/*position: relative;*/
+/*padding: 20px;*/
+/*color: #000;*/
+/*line-height: 1;*/
+/*transition: 0.2s all linear;*/
+/*cursor: pointer;*/
+/*}*/
+li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    border-bottom: 5px solid rgb(0, 162, 255);
+    transition: 0.2s all linear;
+}
+
+li:active {
+    /*background: #000;*/
+    color: #fff;
+}
+
+.active ~ li::before {
+    left: 0;
+}
+.active::before {
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.hover::before{
+    width: 200%;
+}

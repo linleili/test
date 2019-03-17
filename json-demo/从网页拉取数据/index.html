@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息列表</title>
+    <script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/index.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="./bootstrap/js/handlebars.js"></script>
+
+</head>
+<body>
+<div class="top">
+    <h2>用户信息系统</h2>
+</div>
+
+<div class="center">
+
+    <div class="center-left pull-left ">
+        <div class="left1"><a href="index.html" class="pull-left"><h3>信息列表</h3></a></div>
+        <div class="left2"><a href="list.html" class="pull-left"><h3>用户列表</h3></a></div>
+    </div>
+    <div class="center-right pull-right ">
+        <div class="bs-example" data-example-id="striped-table">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>帖子名称</th>
+                    <th>用户姓名</th>
+                    <th>发帖数</th>
+                    <th>电话</th>
+                </tr>
+                </thead>
+                <tbody class="clearfix j-item">
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<script id="tem-main" type="text/x-handlebars-template">
+
+    {{#each newreply}}<!--each可以循环对象的，里面的值使用this来取遍历,固定要加井号，html传的必须是需要遍历的对象的父级-->
+    <tr>
+        <td class="col-lg-8">
+            {{subject}}
+        </td>
+        <td class="col-lg-2">
+            {{author}}
+        </td>
+        <td class="col-lg-2">
+            {{fid}}
+        </td>
+        <td class="col-lg-2">
+            {{tid}}
+        </td>
+    </tr>
+    {{/each}}
+
+</script>
+<script>
+    window.onload=function(){
+        getData();
+    };
+    function getData(id) {/*id可传入参数*/
+        $.ajax({
+            method: "GET",
+            url: "https://easy-mock.com/mock/5c049dc5a0ef2373aa8fb015/list/list",
+            data: {}/*data:{}固定写法*/
+        }).done(function (data) {
+            var tem = Handlebars.compile($("#tem-main").html());
+            $('.j-item').html(tem(data.data));
+        });
+    }
+</script>
+</body>
+</html>

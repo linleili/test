@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script src="handlebars.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="main">
+	<div class="top">
+		<p>切出</p>
+	</div>
+<div class="left">
+	<ul>
+		<li><p>笔记</p></li>
+		<li><p>随笔</p></li>
+		<li><p>技术</p></li>
+		<li><p>资源</p></li>
+		<li><p>css</p></li>
+		<li><p>框架</p></li>
+		<li><p>插件</p></li>
+		<li><p>数据</p></li>
+	</ul>
+</div>
+<div class="list">
+	<table class="table table-hover">
+  
+</table>
+</div>
+</div>
+
+<script>
+	$(function(){
+			
+$(".top").click(function(){
+
+if($(".left").css("margin-left")==("0px"))
+{
+	$(".left").css("margin-left","-255px");
+	$(".list").css("display","none");
+}
+else{
+	$(".left").css("margin-left","0px");
+}
+});
+
+$(".left ul").find("li").each(function(){
+
+	$(this).click(function(){
+		
+$(".list").css("display","block");
+
+})
+});
+
+});
+</script>
+<script id="tem-main" type="text/x-handlebars-template">
+{{#each this}}
+	<tr>
+<td>{{subject}}</td>
+<td>{{postdate}}</td>
+	</tr>
+{{/each}}
+
+
+	
+
+        
+
+    
+</script>
+
+<script>
+    getData();
+    function getData(id) {/*传入参数*/
+        $.ajax({
+            method: "GET",
+            url: "https://easy-mock.com/mock/5c049dc5a0ef2373aa8fb015/list/list",
+            data: {}/*data:{}固定写法*/
+        }).done(function (data) {
+var tem;
+                 tem = Handlebars.compile($("#tem-main").html());
+                $('.table').html(tem(data.data.newreply));
+        });
+
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.main{
+    width: 1000px;
+    height: 3000px;
+    /*background-color: yellow;*/
+    margin: auto;
+}
+.top1{
+    width: 1000px;
+    height: 65px;
+    /*background-color: green;*/
+    margin: auto;
+}
+.top1 img{
+    margin-left: 400px;
+}
+.lunbotu{
+    width: 100%;
+    height: 410px;
+    overflow: hidden;
+    /*background-color: #4b9726;*/
+}
+.main-top2{
+    width: 100%;
+    height: 51px;
+    /*background-color: #ff8400;*/
+    border-top: 1px blue solid;
+}
+.center11111{
+    width: 100%;
+    height: 920px;
+    /*background-color: gray;*/
+    float: left;
+}
+.happy{
+    width: 404px;
+    height: 98%;
+    /*background-color: blue;*/
+    float: left;
+}
+.happy-right{
+    width: 775px;
+    height: 98%;
+    /*background-color: #4b9726;*/
+    float: right;
+
+}
+.happy-right-top{
+    width: 100%;
+    height: 350px;
+    /*background-color: #ff8400;*/
+}
+.happy-right-top-left{
+    width: 377px;
+    height: 340px;
+    /*background-color: #1168b8;*/
+    float: left;
+}
+.happy-right-top-right{
+    width: 383px;
+    height: 340px;
+    /*background-color: #1168b8;*/
+    float: right;
+}
+.happy-right-bottom{
+    width: 100%;
+    height: 565px;
+    /*background-color: #970006;*/
+
+}
+.happyday{
+    width: 48%;
+    height: 89%;
+    /*background-color: #4b9726;*/
+    float: left;
+}
+.happyclass{
+    width: 51%;
+    height: 89%;
+    /*background-color: #1168b8;*/
+    float: right;
+}
+
+.scroll{
+    position: relative;
+    width: 400%;
+    height: 100%;
+    left: 0%;
+    transition: 1s;
+}
+.scroll li{
+    height: 100%;
+    float: left;
+    width: 25%;
+    left:0;
+
+}
+
+.main_right .j-main li {
+    margin: 0 0 5px; }
+
+.main_right .j-main li i {
+    font-style: italic;
+    display: block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    float: left; }
+
+.main_right .j-main li b {
+    display: block;
+    float: right;
+    width: 355px;
+    height: 27px;
+    background-color: white;
+    line-height: 20px;
+    padding: 0 0 0 10px;
+    font-size: 15px;
+    border-left: 1px solid #333333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+
+.main_right .j-main li a {
+    color: #000; }
+
+.main_right .j-main  li:nth-child(-n+3) b {
+    font-weight: bold; }
+
+ol li{ list-style-type:decimal-leading-zero; list-style-position:inside;
+    padding-top: 0px;
+}
+
+.main_right  .j-main li:nth-child(-n+3) {
+    background: #ff8400;
+    color: #FFFFff !important; }

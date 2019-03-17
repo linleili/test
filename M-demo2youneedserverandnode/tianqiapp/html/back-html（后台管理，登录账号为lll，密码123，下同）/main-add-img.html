@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bs插件</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/admin-index.css">
+</head>
+
+<body>
+<div class="top">
+    <ul>
+        <li><a href="main-index">返回-详情页</a></li>
+        <li><a href="main-add">详情页-增加标题</a></li>
+        <li><a a class="active" href="main-add-img">详情页-增加广告栏</a></li>
+        <li><a href="main-add-main">详情页-增加内容和图片</a></li>
+    </ul>
+</div>
+   <div class="form111">
+    <form class="j-form-img">
+        <!--标题：<input type="text" name="title" class="j-upload"/>-->
+        图片：<br>
+        <input type="file" name="img" class="j-upload" />
+        <button type="submit" class="btn btn-default">添加</button>
+    </form>
+</div>
+    <script src="/js/handlebars.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+
+        $('.j-form-img').on('submit', function(){/*上传图片需要用这一段*/
+            //创建formdata实例，相当于一个容器
+            //取得input files里面的图片
+            var myphoto = $('.j-upload')[0].files[0],/*取文件*/
+                formdata = new FormData();/*设置一个空的容器，用来存表单*/
+                //遍历所有的表单元素input,把每个input数值放到容器里
+            $('input', this).each(function(){/*遍历表单上所有的input，然后再一个一个添加到容器里面*/
+                formdata.append($(this).attr('name'), $(this).val())
+            })
+            //把图片放到容器里
+            //使用append（名字，值）
+            formdata.append('img', myphoto)
+
+
+        // $('.j-form-img').submit(function(){/*上传表单用这一段*/
+        //     $.post('/add-img', {img: $('.j-upload').val()}, function(res){
+        //         if (res.code == 0){
+        //             location.href = '/admin-index'
+        //         }
+        //     })
+        //     //阻止默认的提交事件
+        //     return false;
+        // })
+
+            $.ajax({/*然后再使用ajax提交给服务端*//*上传图片用这一段*/
+                type: 'POST',
+                url: '/add5-img',
+                cache: false,
+                processData: false,
+                contentType:false,
+                data: formdata,
+                dataType:'json'
+            }).done(function(res){/**/
+                if (res.code == 0) {
+                    location.href = '/main-index'
+                }
+            })
+
+            //阻止默认的提交事件
+            return false;
+        })
+
+        if ( !$.cookie('token1') ){
+            location.href = '/login';
+        }
+    </script>
+</body>
+</html>

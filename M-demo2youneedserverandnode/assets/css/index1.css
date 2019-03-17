@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.index{
+    width: 350px;
+    height: 220px;
+    margin: auto;
+    padding: 15px;
+    border: 1px gray solid;
+}
+.btn{
+    margin-left: 120px;
+}

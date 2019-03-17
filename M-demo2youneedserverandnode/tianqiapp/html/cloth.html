@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>穿衣指数</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/zepto.min.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="css/cloth.css">
+    <script src="/js/vue.js"></script>
+    <script src="/js/vue-router.js"></script>
+    <script src="/js/vue-resource.js"></script>
+    <script src="/js/zepto.plugin.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+
+<div class="center">
+    <div class="main">
+        <a href="main"><div class="main-left"><img src="uploads/shot.png" alt=""></div></a>
+        <div class="main-right">
+            <p>穿衣指数</p>
+        </div>
+    </div>
+
+    <div class="center-list-center">
+        <ul>
+            <li class="tab active" data-index="0"><div class="center-list-center-list">
+                <p>今天</p>
+
+            </div></li>
+            <li class="tab" data-index="1"><div class="center-list-center-list">
+                <p>明天</p>
+
+            </div></li>
+            <li class="tab" data-index="2"><div class="center-list-center-list">
+                <p>后天</p>
+
+            </div></li>
+
+        </ul>
+    </div>
+    <!--<div class="center-top">-->
+        <!--<div class="center-top-text">-->
+            <!--<ul>-->
+                <!--<li class="li1"><div class="text-list list1"><p>今天</p></div></li>-->
+                <!--<li class="li2"><div class="text-list"><p>明天</p></div></li>-->
+                <!--<li class="li3"><div class="text-list"><p>后天</p></div></li>-->
+            <!--</ul>-->
+
+        <!--</div>-->
+    <!--</div>-->
+
+
+    <div class="idea">
+        <div class="idea-top">
+            <div class="idea-top-img"><p>北海市</p><img src="uploads/siquation.jpg" alt=""></div>
+        <div v-for="(item,index) in myData1" class="idea-top-right"><p>{{item.title}}</p></div>
+        </div>
+        <div class="idea-bottom">
+           <div v-for="item in myData" class="bottom-center"> <img src="uploads/cloth.jpg" alt="">
+            <p>{{item.title}}</p></div>
+            <!--衣着建议：短袖-->
+        </div>
+    </div>
+
+<div class="photo">
+    <!--<img v-for="item in myData2" :src="item.img" alt="">-->
+    <img src="uploads/boy.jpg" alt="">
+    <img src="uploads/di.jpg" alt="">
+    <img src="uploads/boy.jpg" alt=""></div>
+<div class="clear:both"></div>
+    <div class="baike">
+<div class="baike-left"></div>
+        <div class="baike-center"><p>生活小百科</p></div>
+        <div class="baike-right"></div>
+    </div>
+    <div class="baiketext">
+        <p>伞是一种遮阳或遮蔽雨、雪的工具。一般用油纸、油布或塑料布等做成。雨伞的英文Umbrella来自拉丁文的Umbra。</p>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+<!--<script>-->
+    <!--var lis = document.getElementsByClassName('tab');-->
+    <!--for(var i=0; i<lis.length; i++){-->
+        <!--lis[i].onclick = function(){-->
+            <!--var that = this;-->
+            <!--for(var i=0; i<lis.length; i++){-->
+                <!--lis[i].classList.remove('active')-->
+                <!--this.classList.add('active')-->
+            <!--}-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+
+
+<script type="text/javascript">
+
+    new Vue({
+        el: '.center',
+        data:{
+
+            curindex:'nothing',
+
+            myData:[],/*存放内容*/
+            myData1:[],
+            myData2:[],
+
+
+
+        },
+        mounted(){
+            var lis = document.getElementsByClassName('tab');
+            for(var i=0; i<lis.length; i++){
+                lis[i].onclick = function(){
+                    var that = this;
+                    for(var i=0; i<lis.length; i++){
+                        lis[i].classList.remove('active')
+                        this.classList.add('active')
+                    }
+                }
+            }
+        },
+
+
+        created:function(){/*渲染的段落数据*/
+            var that = this;
+            this.$http.get('/getlist-main').then(function (res,err) {
+                that.myData=res.body.list
+                console.log(that.myData)
+                console.log(res.body)
+            })
+
+
+            this.$http.get('/getlist').then(function (res,err) {
+                that.myData1=res.body.list
+                console.log(that.myData1)
+                console.log(res.body.list)
+            })
+
+            this.$http.get('/getlist-img').then(function (res,err) {
+                that.myData2=res.body.list
+                console.log(that.myData2)
+                console.log(res.body)
+            })
+        },
+
+
+        // created:function(){/*渲染的段落数据*/
+        //     var that = this;
+        //     this.$http.get('/getlist3-main').then(function (res,err) {
+        //         that.myData=res.body.data
+        //         console.log(that.myData)
+        //     })
+        //     console.log(myData)
+        // },
+
+
+
+
+
+
+    })
+</script>
+</body>
+</html>

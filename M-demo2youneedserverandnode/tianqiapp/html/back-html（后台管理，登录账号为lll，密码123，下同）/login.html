@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台登录</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/index1.css">
+</head>
+
+<body>
+<div class="page-header">
+    <h1>欢迎使用后台系统！</h1>
+</div>
+<div class="index">
+<form class="j-form">
+    <div class="form-group">
+        <label for="exampleInputEmail1">用户名：</label>
+        <input type="text" class="form-control j-name" id="exampleInputEmail1" placeholder="username" value="" name="name">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">id：</label>
+        <input type="password" class="form-control j-password" id="exampleInputPassword1" placeholder="id" value=""  name="password">
+    </div>
+
+    <button type="submit" class="btn btn-default">提交</button>
+</form>
+</div>
+    <!--<form class="j-form">-->
+        <!--名字：<input type="text" value="" name="name" class="j-name" />-->
+        <!--<br>-->
+        <!--id：<input type="text" value=""  name="password" class="j-password" />-->
+        <!--<br>-->
+        <!--<button type="submit">提交</button>-->
+    <!--</form>-->
+
+
+    <script>
+        $('.j-form').submit(function(){
+            $.post('/loginData', {name: $('.j-name').val(), password: $('.j-password').val()}, function(res){
+                if (res.code == 0){
+                    location.href = '/index-index'
+                }else if (res.code==1){
+                    alert('用户名或id错误，禁止访问');
+                }
+            })
+            //阻止默认的提交事件
+            return false;
+        })
+    </script>
+</body>
+</html>

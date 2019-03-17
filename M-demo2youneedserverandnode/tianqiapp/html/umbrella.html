@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>带伞指数</title>
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/zepto.min.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="css/umbrella.css">
+    <script src="/js/vue.js"></script>
+    <script src="/js/vue-router.js"></script>
+    <script src="/js/vue-resource.js"></script>
+    <script src="/js/zepto.plugin.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="/js/slider.js" type="text/javascript" charset="utf-8"></script>-->
+</head>
+<body>
+<div class="center">
+    <div class="main">
+        <a href="main"><div class="main-left"><img src="uploads/shot.png" alt=""></div></a>
+        <div class="main-right">
+            <p>带伞指数</p>
+        </div>
+
+        <!--<a href="enjoy"> <img src="uploads/fly.png" alt="" class="img2333"></a>-->
+
+    </div>
+
+    <div v-for="item in myData2" class="picture">
+        <img :src="item.img" alt="">
+        <!--<img src="uploads/umbrella.jpg" alt="">-->
+        <p class="p1">无需</p>
+
+
+        <div class="picture-div">
+            <div class="picture-div-top">
+                <img src="uploads/position.png" alt="">
+                <p>北海市</p>
+            </div>
+            <div v-for="item in myData1" class="picture-div-top">
+
+                <p>{{item.title}}</p>
+            </div>
+            <!--<div class="picture-div-top">-->
+
+                <!--<p>天气状况：小雨转晴</p>-->
+            <!--</div>-->
+            <!--<div class="picture-div-top">-->
+                <!--<p>空气质量：优</p>-->
+            <!--</div>-->
+        </div>
+        <div class="picture-bottom"><p>不会下雨，无需带伞</p></div>
+    </div>
+
+    <div class="center-list-center">
+        <ul>
+            <li class="tab active" data-index="0"><div class="center-list-center-list">
+                <p>今天</p>
+
+            </div></li>
+            <li class="tab" data-index="1"><div class="center-list-center-list">
+                <p>明天</p>
+
+            </div></li>
+            <li class="tab" data-index="2"><div class="center-list-center-list">
+                <p>后天</p>
+
+            </div></li>
+
+        </ul>
+    </div>
+    <div class="clear:both"></div>
+    <div class="baike">
+        <div class="baike-left"></div>
+        <div class="baike-center"><p>生活小百科</p></div>
+        <div class="baike-right"></div>
+    </div>
+    <div v-for="item in myData" class="baiketext">
+        <p>{{item.title}}</p>
+    </div>
+</div>
+
+<!--<script>-->
+    <!--var lis = document.getElementsByClassName('tab');-->
+    <!--for(var i=0; i<lis.length; i++){-->
+        <!--lis[i].onclick = function(){-->
+            <!--var that = this;-->
+            <!--for(var i=0; i<lis.length; i++){-->
+                <!--lis[i].classList.remove('active')-->
+                <!--this.classList.add('active')-->
+            <!--}-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+
+<script type="text/javascript">
+
+    new Vue({
+        el: '.center',
+        data:{
+
+            curindex:'nothing',
+
+            myData:[],/*存放内容*/
+            myData1:[],
+            myData2:[],
+
+
+
+        },
+        mounted(){
+            var lis = document.getElementsByClassName('tab');
+            for(var i=0; i<lis.length; i++){
+                lis[i].onclick = function(){
+                    var that = this;
+                    for(var i=0; i<lis.length; i++){
+                        lis[i].classList.remove('active')
+                        this.classList.add('active')
+                    }
+                }
+            }
+        },
+
+
+        created:function(){/*渲染的段落数据*/
+            var that = this;
+            this.$http.get('/getlist1-main').then(function (res,err) {
+                that.myData=res.body.list
+                console.log(that.myData)
+                console.log(res.body)
+            })
+
+
+            this.$http.get('/getlist1').then(function (res,err) {
+                that.myData1=res.body.list
+                console.log(that.myData1)
+                console.log(res.body.list)
+            })
+
+            this.$http.get('/getlist1-img').then(function (res,err) {
+                that.myData2=res.body.list
+                console.log(that.myData2)
+                console.log(res.body)
+            })
+        },
+
+
+        // created:function(){/*渲染的段落数据*/
+        //     var that = this;
+        //     this.$http.get('/getlist3-main').then(function (res,err) {
+        //         that.myData=res.body.data
+        //         console.log(that.myData)
+        //     })
+        //     console.log(myData)
+        // },
+
+
+
+
+
+
+    })
+</script>
+</body>
+</html>

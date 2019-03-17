@@ -1,0 +1,186 @@
+.main{
+    width: 100%;
+    height: 120px;
+    background-image: linear-gradient(to right,rgb(0,164,182),rgb(0,205,184));
+    position: relative;
+}
+.center{
+    width: 100%;
+    height: 1741px;
+}
+.main-left{
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    float: left;
+    top: 3px;
+    left: 20px;
+}
+.main-left img{
+    width: 6rem;
+    height: 100%;
+}
+.main-right{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    float: right;
+    margin-top: 10px;
+}
+.center-center-img{
+    margin: auto;
+    width: 29.5rem;
+    height: 100%;
+}
+.main-right p{
+    color: white;
+    font-size: 6rem;
+    font-family: 微软雅黑;
+}
+.center-center{
+    width: 100%;
+    height: 311px;
+    /*background-color: blue;*/
+    margin-top: 10rem;
+}
+.center-center img{
+    width: 29rem;
+    height: 100%;
+}
+.text1{
+    width: 70%;
+    height: 50rem;
+
+    margin: auto;
+    margin-top: 10rem;
+}
+.input1{
+    font-family: 微软雅黑;
+    border: none;
+    border-bottom: #000000 1px solid;
+    font-size: 5rem;
+    height: 10rem;
+    margin-left: 2rem;
+    margin-bottom: 5rem;
+}
+
+.input2{
+    font-family: 微软雅黑;
+
+    border: none;
+    border-bottom: #000000 1px solid;
+    font-size: 5rem;
+    height: 10rem;
+    margin-left: 2rem;
+    margin-bottom: 5rem;
+}
+.form1{
+    position: relative;
+}
+.form1 img{
+    position: absolute;
+    top: 0.5rem;
+    height: 9rem;
+    left: -3rem;
+}
+
+.form2{
+    position: relative;
+}
+.form2 img{
+    position: absolute;
+    top: 0.5rem;
+    height: 9rem;
+    left: -3rem;
+}
+
+.form3{
+    position: relative;
+}
+.form1 span{
+
+}
+.form3 img{
+    position: absolute;
+    top: 0.5rem;
+    height: 9rem;
+    left: -4rem;
+}
+.btn1{
+    width: 100%;
+    height: 12rem;
+    font-size: 8rem;
+    font-family: 微软雅黑;
+    color: white;
+    background-color: rgb(9,207,187);
+    border-top-left-radius: 55px;
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    border-bottom-right-radius: 55px;
+    margin-bottom: 4rem;
+}
+.sign{
+    width: 16rem;
+    height: 2rem;
+    float: left;
+    font-size: 4rem;
+    color: rgb(9,207,187);
+}
+.forget{
+    width: 16rem;
+    height: 2rem;
+    float: right;
+    font-size: 4rem;
+    color: rgb(9,207,187);
+
+
+}
+.line-left{
+    width: 26%;
+    float: left;
+    height: 0.1rem;
+    background-color: gray;
+    float: left;
+    margin-top: 8rem;
+}
+.line{
+    width: 70%;
+    height: 13rem;
+    margin: auto;
+}
+.line-right{
+    width: 26%;
+
+    height: 0.1rem;
+    background-color: gray;
+    float: right;
+    margin-top: 8rem;
+}
+.line span{
+    font-size: 5rem;
+    color: gray;
+    font-family: 微软雅黑;
+    margin-top: 5rem;
+    float: left;
+    margin-left: 1rem;
+}
+.bottom{
+    width: 80%;
+    height: 14rem;
+    margin-left: 8.2rem;
+    /*margin: auto;*/
+    /*background-color: aqua;*/
+    margin-top: 3rem;
+    float: left;
+}
+.bottom ul li{
+    height: 14rem;
+    width: 14rem;
+    float: left;
+    margin: 0 3rem;
+    list-style-type: none;
+}
+.bottom img{
+    width: 100%;
+    height: 100%;
+}

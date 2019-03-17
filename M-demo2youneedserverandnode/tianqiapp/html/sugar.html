@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情页</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="js/zepto.min.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <script src="/js/vue.min.js"></script>
+    <script src="/js/vue.js"></script>
+    <script src="/js/vue-router.js"></script>
+    <script src="/js/vue-resource.js"></script>
+    <script src="/js/zepto.plugin.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <!--<script src="/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="css/sugar.css">
+</head>
+<body>
+<div class="center">
+    <div class="main">
+        <a href="turist"><div class="main-left"><img src="uploads/shot.png" alt=""></div></a>
+        <div class="main-right">
+            <p>北海还珠堂</p>
+        </div>
+    </div>
+    <div v-for="item in myData2" class="center-center">
+        <img :src="item.img" alt="">
+        <!--<img src="uploads/sugar.jpg" alt="">-->
+        <span>展馆</span>
+        <p>历史展馆还珠堂</p>
+    </div>
+    <div class="center-list">
+        <div class="center-list-top"><p>景区天气详情</p></div>
+      <div class="center-list-center">
+          <ul>
+              <li class="tab" data-index='0'>
+               <div class="center-list-center-list">
+              <p>昨天</p>
+              <p>07/30</p>
+          </div>
+
+
+              </li>
+              <li class="tab" data-index='1'>   <div class="center-list-center-list">
+                  <p>今天</p>
+                  <p>07/30</p>
+              </div>
+
+              </li>
+              <li class="tab" data-index='2'>  <div class="center-list-center-list">
+                  <p>星期三</p>
+                  <p>07/30</p>
+              </div></li>
+              <li class="tab" data-index='3'>  <div class="center-list-center-list">
+                  <p>星期四</p>
+                  <p>07/30</p>
+              </div></li>
+              <li class="tab" data-index='4'>  <div class="center-list-center-list">
+                  <p>星期五</p>
+                  <p>07/30</p>
+              </div></li>
+              <li class="tab" data-index='5'>  <div class="center-list-center-list">
+                  <p>星期六</p>
+                  <p>07/30</p>
+              </div></li>
+          </ul>
+      </div>
+
+<div class="center-list-bottom">
+    <div class="center-list-bottom-left">
+        <img src="uploads/sun.jpg" alt="" class="img3">
+        <p class="p1">晴</p>
+        <div v-for="item in myData" class="center-list-bottom-left-top"><!--<img :src="item.img" alt="">--><img src="uploads/sun1.jpg" alt=""></div>
+        <!--<div class="center-list-bottom-left-top">&lt;!&ndash;<img :src="item.img" alt="">&ndash;&gt;<img src="uploads/sun1.jpg" alt=""></div>-->
+        <div class="center-list111">
+            <div class="center-list222">
+                <p>日出05:15</p>
+            </div>
+            <div class="center-list222">
+                <p>日落18:15</p>
+            </div>
+        </div>
+    </div>
+
+    <div v-for="item in myData1" class="center-list-bottom-right">
+        <div class="center-list-center111">
+            <div class="list-center-left"><p>温度</p></div>
+            <div class="list-center-right">
+
+                <p class="p2">{{item.title}}</p>
+            </div>
+        </div>
+        <div class="center-list-center111">
+            <div class="list-center-left"><p>风力</p></div>
+            <div class="list-center-right">
+
+                <p class="p2">东南风三级</p>
+            </div>
+        </div>
+        <div class="center-list-center111 center1122">
+            <div class="list-center-left"><p>空气质量</p></div>
+            <div class="list-center-right">
+
+                <p class="p2">63&emsp;良</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="center-bottom">
+        <div class="center-list-top"><p>景区讲简介</p>
+
+            <div v-for="item in myData" class="center-list-center1"><p>&emsp;&emsp;{{item.title}}</p></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+    new Vue({
+        el: '.center',
+        // router: aa,/*引用名为aa的router*/
+        data:{
+
+            curindex:'nothing',
+
+            myData:[],/*存放内容*/
+            myData1:[],
+            myData2:[],
+
+
+
+        },
+
+
+        created:function(){/*渲染的段落数据*/
+            var that = this;
+            this.$http.get('/getlist3-main').then(function (res,err) {
+                that.myData=res.body.list
+                console.log(that.myData)
+                console.log(res.body)
+            })
+
+
+            this.$http.get('/getlist3').then(function (res,err) {
+                that.myData1=res.body.list
+                console.log(that.myData1)
+                console.log(res.body.list)
+            })
+
+            this.$http.get('/getlist3-img').then(function (res,err) {
+                that.myData2=res.body.list
+                console.log(that.myData2)
+                console.log(res.body)
+            })
+        },
+
+
+
+
+
+
+
+
+    })
+</script>
+
+
+<!--<script id="tem-main" type="text/x-handlebars-template">-->
+    <!--{{#list}} <li class="li2">-->
+    <!--<a href="/news/{{_id}}"><b>{{title}}</b><div class="clear"></div></a>-->
+<!--</li>{{/list}}-->
+<!--</script>-->
+<!--<script id="tem-main1" type="text/x-handlebars-template">-->
+    <!--{{#list}}-->
+    <!--<a href="/news/{{_id}}"><img src="{{img}}" alt=""></a>-->
+    <!--{{/list}}-->
+<!--</script>-->
+<!--<script id="tem-main-main" type="text/x-handlebars-template">-->
+    <!--{{#list}}-->
+    <!--<span class="sp1"><img src="{{img}}" alt=""/></span>-->
+    <!--<p>{{title}}</p>-->
+    <!--{{/list}}-->
+<!--</script>-->
+
+
+
+<!--<script>-->
+
+    <!--$.get('/getlist', function(res){-->
+        <!--console.log(res);-->
+        <!--var myTemplate = Handlebars.compile($('#tem-main').html());-->
+        <!--var html = myTemplate(res);-->
+        <!--$('.j-main').html(html)-->
+    <!--});-->
+
+
+    <!--$.get('/getlist-img', function(res){-->
+        <!--console.log(res);-->
+        <!--var myTemplate1 = Handlebars.compile($('#tem-main1').html());-->
+        <!--var html = myTemplate1(res);-->
+        <!--$('.adv').html(html)-->
+    <!--})-->
+
+    <!--$.get('/getlist-main', function(res){-->
+        <!--console.log(res);-->
+        <!--var myTemplate1 = Handlebars.compile($('#tem-main-main').html());-->
+        <!--var html = myTemplate1(res);-->
+        <!--$('.main-main').html(html)-->
+    <!--})-->
+
+
+<!--</script>-->
+
+
+<script>
+    var lis = document.getElementsByClassName('tab');
+    for(var i=0; i<lis.length; i++){
+        lis[i].onclick = function(){
+            var that = this;
+            for(var i=0; i<lis.length; i++){
+                lis[i].classList.remove('active')
+                this.classList.add('active')
+            }
+        }
+    }
+</script>
+</body>
+</html>

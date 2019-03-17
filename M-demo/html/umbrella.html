@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>带伞指数</title>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/handlebars.js"></script>
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="../css/umbrella.css">
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-router.js"></script>
+    <script src="../js/vue-resource.js"></script>
+    <script src="../js/zepto.plugin.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="/js/slider.js" type="text/javascript" charset="utf-8"></script>-->
+</head>
+<body>
+<div class="center">
+    <div class="main">
+        <a href="main.html"><div class="main-left"><img src="../uploads/shot.png" alt=""></div></a>
+        <div class="main-right">
+            <p>带伞指数</p>
+        </div>
+
+        <!--<a href="enjoy"> <img src="uploads/fly.png" alt="" class="img2333"></a>-->
+
+    </div>
+
+    <div class="picture">
+
+        <img src="../uploads/umbrella.jpg" alt="">
+        <p class="p1">无需</p>
+
+
+        <div class="picture-div">
+            <div class="picture-div-top">
+                <img src="../uploads/position.png" alt="">
+                <p>北海市</p>
+            </div>
+
+            <div class="picture-div-top">
+
+                <p>天气状况：小雨转晴</p>
+            </div>
+            <div class="picture-div-top">
+                <p>空气质量：优</p>
+            </div>
+        </div>
+        <div class="picture-bottom"><p>不会下雨，无需带伞</p></div>
+    </div>
+
+    <div class="center-list-center">
+        <ul>
+            <li class="tab active" data-index="0"><div class="center-list-center-list">
+                <p>今天</p>
+
+            </div></li>
+            <li class="tab" data-index="1"><div class="center-list-center-list">
+                <p>明天</p>
+
+            </div></li>
+            <li class="tab" data-index="2"><div class="center-list-center-list">
+                <p>后天</p>
+
+            </div></li>
+
+        </ul>
+    </div>
+    <div class="clear:both"></div>
+    <div class="baike">
+        <div class="baike-left"></div>
+        <div class="baike-center"><p>生活小百科</p></div>
+        <div class="baike-right"></div>
+    </div>
+    <div class="baiketext">
+        <p>此处是生活小百科...</p>
+    </div>
+</div>
+<script>
+    var lis = document.getElementsByClassName('tab');
+    for(var i=0; i<lis.length; i++){
+        lis[i].onclick = function(){
+            var that = this;
+            for(var i=0; i<lis.length; i++){
+                lis[i].classList.remove('active')
+                this.classList.add('active')
+            }
+        }
+    }
+</script>
+</body>
+</html>
